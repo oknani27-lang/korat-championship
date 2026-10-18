@@ -10,6 +10,7 @@ const warnings = new Set();
 let browser;
 
 async function test(name, action) {
+  if(process.env.DMR_TEST_FILTER && !new RegExp(process.env.DMR_TEST_FILTER).test(name))return;
   const context = await browser.newContext({ viewport: { width: 1440, height: 1050 } });
   const page = await context.newPage();
   const errors = [];
@@ -70,6 +71,26 @@ async function routeModelFixture(page, gate) {
   const gltf={asset:{version:'2.0'},scene:0,scenes:[{nodes:[0]}],nodes:[{name:'NamedAssembly',children:[1]},{name:'MeshChild',mesh:0}],meshes:[{primitives:[{attributes:{POSITION:0}}]}],buffers:[{uri:'data:application/octet-stream;base64,'+data.toString('base64'),byteLength:36}],bufferViews:[{buffer:0,byteLength:36}],accessors:[{bufferView:0,componentType:5126,count:3,type:'VEC3',min:[-1,-1,0],max:[1,1,0]}]};
   await page.route('**/tests/part-fixture.gltf',async route=>{if(gate)await gate;await route.fulfill({json:gltf})});
 }
+async function infrastructure(page) {
+  return page.evaluate(async()=>{
+    const url=performance.getEntriesByType('resource').find(r=>r.name.includes('/@react-three_fiber.js')).name;
+    const {_roots}=await import(url),root=_roots.get(document.querySelector('canvas')).store.getState();
+    const names=['ShellA','InsertB','ExtraA','BoxC'];const meshes={};
+    for(const name of names){const mesh=root.scene.getObjectByName(name);if(!mesh)continue;const material=mesh.material;meshes[name]={material:material.uuid,color:material.color?.getHexString(),opacity:material.opacity,transparent:material.transparent,depthWrite:material.depthWrite,geometry:mesh.geometry.uuid};}
+    const flows={};root.scene.traverse(node=>{if(/^flow:.*:marker$/.test(node.name))flows[node.name]=node.position.toArray()});
+    const model=root.scene.getObjectByName('ModelInstance');let bounds=null;
+    if(model){const threeUrl=performance.getEntriesByType('resource').find(r=>r.name.includes('/three.js')).name;const {Box3,Vector3}=await import(threeUrl);const box=new Box3().setFromObject(model);bounds={center:box.getCenter(new Vector3()).toArray(),size:box.getSize(new Vector3()).toArray()};}
+    return {meshes,flows,bounds,target:root.controls.target.toArray(),position:root.camera.position.toArray(),memory:{...root.gl.info.memory},frames:root.gl.info.render.frame,drawCalls:root.gl.info.render.calls};
+  });
+}
+async function pointAtNode(page,name) {
+  const point=await page.evaluate(async name=>{
+    const url=performance.getEntriesByType('resource').find(r=>r.name.includes('/@react-three_fiber.js')).name;
+    const {_roots}=await import(url),canvas=document.querySelector('canvas'),root=_roots.get(canvas).store.getState(),node=root.scene.getObjectByName(name);
+    const point=node.getWorldPosition(node.position.clone()).project(root.camera),rect=canvas.getBoundingClientRect();return {x:rect.x+(point.x+1)*rect.width/2,y:rect.y+(1-point.y)*rect.height/2};
+  },name);return point;
+}
+async function openParts(page){if(!await page.locator('.parts-panel').isVisible())await secondary(page,'รายการชิ้นส่วน');}
 
 (async () => {
   await fs.mkdir(output, { recursive: true });
@@ -279,10 +300,67 @@ async function routeModelFixture(page, gate) {
   await test('Missing model fallback and source replacement do not remount Canvas',async page=>{
     await routeModelFixture(page);await page.route('**/tests/missing.gltf',route=>route.fulfill({status:404,body:'Missing test fixture'}));await ready(page,'/tests/harness.html?case=viewer-switch');await page.locator('.model-notice[role=alert]').waitFor();assert.match(await page.locator('.model-notice').innerText(),/ไม่พบไฟล์โมเดล GLB/);assert.equal(await page.locator('canvas').count(),1);const initial=(await state(page)).scene;await page.getByRole('button',{name:'Switch source'}).click();await page.locator('.model-notice').waitFor({state:'hidden'});assert.equal((await state(page)).scene,initial);assert.equal(await page.locator('canvas').count(),1);
   });
+  await test('Generic registry, hover/selection isolation, focus interruption and repeated reset',async(page,{errors,failures})=>{
+    await ready(page,'/tests/harness.html?case=integration');await page.waitForFunction(()=>document.querySelector('canvas'));await page.waitForTimeout(400);
+    const initial=await infrastructure(page),originalMaterial=initial.meshes.BoxC.material;
+    assert.equal(initial.meshes.ShellA.material,originalMaterial);assert.equal(initial.meshes.ExtraA.material,originalMaterial);
+    const hover=await pointAtNode(page,'BoxC');await page.mouse.move(hover.x,hover.y);await page.waitForTimeout(150);
+    const hovered=await infrastructure(page);assert.notEqual(hovered.meshes.BoxC.material,originalMaterial);assert.equal(hovered.meshes.ShellA.material,originalMaterial);
+    await page.mouse.move(0,0);await page.waitForTimeout(100);assert.equal((await infrastructure(page)).meshes.BoxC.material,originalMaterial);
+    await openParts(page);await page.getByRole('button',{name:'Generic object C',exact:true}).click();await page.waitForTimeout(800);
+    assert.equal(await page.locator('#generic-selection').innerText(),'c');assert(near((await infrastructure(page)).target,[1.1,.6,0]));
+    await page.getByRole('button',{name:'Generic object C',exact:true}).click();assert.equal(await page.locator('#generic-selection').innerText(),'none');assert.equal((await infrastructure(page)).meshes.BoxC.material,originalMaterial);
+    await page.getByRole('button',{name:'Generic group A',exact:true}).click();
+    const box=await page.locator('canvas').boundingBox();await page.mouse.move(box.x+box.width*.55,box.y+box.height*.55);await page.mouse.down();
+    const interrupted=await infrastructure(page);await page.waitForTimeout(500);assert(near((await infrastructure(page)).position,interrupted.position));assert(near((await infrastructure(page)).target,interrupted.target));await page.mouse.up();
+    await page.getByRole('button',{name:'คืนมุมมองเริ่มต้น',exact:true}).click();await page.waitForTimeout(150);assert(near((await infrastructure(page)).position,initial.position));assert.equal(await page.locator('#generic-selection').innerText(),'none');
+    for(let i=0;i<5;i++){await page.getByRole('button',{name:'Generic object C',exact:true}).click();await page.getByRole('button',{name:'คืนมุมมองเริ่มต้น',exact:true}).click()}
+    await page.waitForTimeout(300);assert(near((await infrastructure(page)).position,initial.position));assert.equal((await infrastructure(page)).meshes.ShellA.material,originalMaterial);
+    assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
+  });
+  await test('Timeline X-Ray shells, click-through, multiple reversible flow paths and bounded resources',async(page,{errors,failures})=>{
+    await ready(page,'/tests/harness.html?case=integration');await page.waitForTimeout(400);
+    const original=await infrastructure(page);assert.deepEqual(original.flows,{});
+    await page.getByRole('button',{name:'Start Demo',exact:true}).click();await page.waitForTimeout(150);
+    let current=await infrastructure(page);assert.equal(current.meshes.ShellA.opacity,.18);assert.equal(current.meshes.InsertB.transparent,false);assert.equal(current.meshes.BoxC.material,original.meshes.BoxC.material);
+    const inside=await pointAtNode(page,'InsertB');await page.mouse.click(inside.x,inside.y);assert.equal(await page.locator('#generic-selection').innerText(),'b');
+    await page.getByRole('button',{name:'คืนมุมมองเริ่มต้น',exact:true}).click();
+    const slider=page.getByRole('slider');await slider.fill('750');await page.waitForTimeout(120);const forward=await infrastructure(page);
+    assert.equal(Object.keys(forward.flows).length,2);assert(near(forward.flows['flow:path-a:marker'],[.5,1.9,0]));assert.equal(forward.meshes.ShellA.material,original.meshes.ShellA.material);assert.equal(await page.locator('.canvas-wrap').getAttribute('data-phase-ids'),'late');
+    await slider.fill('100');await page.waitForTimeout(100);current=await infrastructure(page);assert.equal(Object.keys(current.flows).length,1);assert.equal(current.meshes.ShellA.opacity,.18);
+    await slider.fill('750');await page.waitForTimeout(100);assert.deepEqual((await infrastructure(page)).flows,forward.flows);
+    const warmed=await infrastructure(page);
+    for(let i=0;i<15;i++){await slider.fill('100');await slider.fill('750')}
+    await page.waitForTimeout(250);const after=await infrastructure(page);assert.deepEqual(after.memory,warmed.memory);assert.equal(after.meshes.BoxC.material,original.meshes.BoxC.material);
+    await page.waitForTimeout(500);const idle=await infrastructure(page);await page.waitForTimeout(500);assert.equal((await infrastructure(page)).frames,idle.frames);
+    await secondary(page,'แสดงผิวปกติ');assert.equal((await infrastructure(page)).meshes.InsertB.material,original.meshes.InsertB.material);assert.deepEqual((await infrastructure(page)).flows,forward.flows);
+    await page.getByRole('button',{name:'ถัดไป',exact:true}).click();await page.waitForTimeout(800);assert.equal(await slider.inputValue(),'0');assert(near((await infrastructure(page)).target,[1.1,.6,0]));
+    await page.getByRole('button',{name:'ก่อนหน้า',exact:true}).click();assert.equal(await slider.inputValue(),'0');assert.equal(await page.locator('.canvas-wrap').getAttribute('data-phase-ids'),'early');assert.equal((await infrastructure(page)).meshes.ShellA.opacity,.18);
+    console.log('PHASE2_MEASURED',JSON.stringify({warmed:warmed.memory,after:after.memory,drawCalls:after.drawCalls,idleFramesOver500ms:0}));
+    await page.screenshot({path:path.join(output,'generic-xray-desktop.png'),fullPage:true});
+    await page.setViewportSize({width:390,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:path.join(output,'generic-xray-mobile.png'),fullPage:true});
+    assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
+  });
+  await test('Static part visuals stay GPU-idle while the UI timeline plays',async(page,{errors,failures})=>{
+    await ready(page,'/tests/harness.html?case=integration&static=1');await page.getByRole('button',{name:'Start Demo',exact:true}).click();await page.waitForTimeout(500);
+    const before=await infrastructure(page);await page.getByRole('button',{name:'เล่นตัวอย่าง UI',exact:true}).click();await page.waitForTimeout(800);
+    const after=await infrastructure(page);console.log('STATIC_PLAYBACK_FRAMES',after.frames-before.frames);assert.equal(after.frames,before.frames,'progress without visual changes must not redraw the static model or contact shadows');
+    await page.getByRole('button',{name:'หยุดตัวอย่าง UI',exact:true}).click();assert.deepEqual(after.flows,{});assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
+  });
+  await test('Explicit normalized bounds, invalid model fallback and repeated Canvas disposal',async(page)=>{
+    await ready(page,'/tests/harness.html?case=integration-normalized');await page.waitForTimeout(300);const normalized=await infrastructure(page);assert(near(normalized.bounds.center,[0,0,0]));assert(Math.abs(Math.max(...normalized.bounds.size)-3)<1e-5);
+    for(let i=0;i<3;i++){
+      await page.evaluate(async()=>{const url=performance.getEntriesByType('resource').find(r=>r.name.includes('/@react-three_fiber.js')).name;const mod=await import(url),canvas=document.querySelector('canvas');window.oldCanvas=canvas;window.rootsForTest=mod._roots;window.disposeCount=0;const gl=mod._roots.get(canvas).store.getState().gl,dispose=gl.dispose.bind(gl);gl.dispose=()=>{window.disposeCount++;dispose()}});
+      await page.getByRole('button',{name:'Unmount',exact:true}).click();await page.waitForTimeout(650);assert.equal(await page.locator('canvas').count(),0);assert.equal(await page.evaluate(()=>window.rootsForTest.has(window.oldCanvas)),false);assert.equal(await page.evaluate(()=>window.disposeCount),1);
+      await page.getByRole('button',{name:'Mount',exact:true}).click();await page.locator('canvas').waitFor();await page.waitForTimeout(350);assert.equal(await page.locator('canvas').count(),1);
+    }
+    await page.route('**/tests/part-fixture.gltf',route=>route.fulfill({contentType:'model/gltf+json',body:'{"asset": invalid JSON'}));await ready(page,'/tests/harness.html?case=viewer-low');await page.locator('.model-notice[role=alert]').waitFor();assert.equal(await page.locator('canvas').count(),1);assert.match(await page.locator('.model-notice').innerText(),/โหลดโมเดล GLB ไม่สำเร็จ/);
+  });
   await fs.writeFile(path.join(output,'browser-audit.json'),JSON.stringify({results,warnings:[...warnings]},null,2));
   console.log('WARNINGS',JSON.stringify([...warnings]));
   console.log(`PASS: ${results.length} browser suites`);
 })().catch(async error=>{console.error(error);await fs.mkdir(output,{recursive:true});await fs.writeFile(path.join(output,'browser-audit.json'),JSON.stringify({results,error:error.message,warnings:[...warnings]},null,2));process.exitCode=1;}).finally(async()=>{await browser?.close();});
+
 
 
 

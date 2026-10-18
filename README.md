@@ -27,8 +27,8 @@ The three neutral cylinders are **UI layout placeholders, not a scientific repre
 ## Interactions
 
 - Orbit: left drag; pan: right drag (or Pan tool + left drag); zoom: wheel, middle drag or Zoom tool + left drag. Touch: one finger rotates/pans according to the active mode; two fingers zoom/pan. Zoom buttons and Reset are provided. The camera has bounded zoom and polar angles.
-- X-Ray currently toggles a cyan **wireframe preview of the placeholder**. It is not internal Smart X-Ray. It is disabled when a real model is configured until its material strategy is implemented.
-- Parts opens a pending-data panel. With a populated registry, clicking a model node selects its mapped part, hovering shows a focus marker, and choosing a part focuses the target when configured. Actual material highlighting awaits model verification.
+- X-Ray toggles the existing **wireframe placeholder preview** while no model is configured. Phase 2A also provides scoped shell transparency/material restoration for future mapped models, demonstrated only on generic fixtures. This is not a validated DMR internal simulation.
+- Parts opens a pending-data panel. With a populated registry, hovering highlights an instance-owned material, clicking toggles selection, and choosing a mapped object/group auto-focuses its bounds. Clear selection and Reset Overview are available. Real-model material behavior still needs verification.
 - Bottom sheet expands/collapses with a short CSS grid transition. Hidden content is inert for keyboard access. Navigation uses working anchors; the mobile navigation closes after selection.
 - Start Demo enters Demo Mode without changing scroll position or the URL hash, and preserves the Canvas. Manual controls are enabled on entry; the sheet remains Compact until expanded by the user.
 - The 30-second UI-only timeline plays, pauses, restarts and scrubs backward/forward within the selected step. A shared reducer owns Demo Mode, current step, normalized per-step progress, selected part, sheet state and playback. Previous/Next and step buttons change steps, stop playback and reset progress. The timer stops at completion, pause, unmount, and while the document is hidden. No fluid or machine animation is driven by this preview.
@@ -60,7 +60,7 @@ The three neutral cylinders are **UI layout placeholders, not a scientific repre
 [{ "id": "confirmed-part-id", "nodeName": "ExactBlenderNodeName", "label": "ชื่อชิ้นส่วนที่ยืนยัน", "focus": [0, 0, 0] }]
 ```
 
-`focus` is a world-space location or `null`. Current `MachineModel` assumes a static rigid machine; animated/skinned models need a skeleton-aware clone. Shared cached GLB assets are not disposed by the component; placeholder resources are managed by R3F.
+`focus` is a viewer-world-space target override or `null`. Phase 2A preserves hierarchy with skeleton-aware cloning and disposes instance-owned material/bone-texture resources while preserving shared cached GLB assets. Real rigged-model animation is not implemented. See `PHASE2A.md` for normalization, ownership and coordinate contracts.
 
 5. Populate `flow-paths.json` only from the verified diagram:
 

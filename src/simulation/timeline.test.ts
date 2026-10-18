@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import './infrastructure.test.ts'
 import { clampProgress, nextProgress, stepAtProgress, stepStart, validateTimeline } from './timeline.ts'
 import { checkPartMappings, findPart } from './parts.ts'
 import { parseFlows, parseParts, parseResearch, parseSteps, readData } from '../data/parse.ts'

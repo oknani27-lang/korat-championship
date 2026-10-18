@@ -3,7 +3,7 @@ import partsData from './machine-parts.json'
 import pathsData from './flow-paths.json'
 import researchData from './research.json'
 import { parseFlows, parseParts, parseResearch, parseSteps, readData } from './parse'
-import type { ViewerQuality } from '../types/machine'
+import type { ModelTransform, ViewerQuality } from '../types/machine'
 
 const process = readData(processData, parseSteps, 'ข้อมูลกระบวนการ')
 const machine = readData(partsData, parseParts, 'ข้อมูลชิ้นส่วน')
@@ -19,6 +19,10 @@ for (const step of steps) {
   for (const id of [...step.activeParts, ...(step.activeXrayParts ?? [])]) known(id, parts.map(part => part.id), step.id)
   for (const id of step.flowPaths) known(id, flowPaths.map(path => path.id), step.id)
   for (const id of step.researchIds ?? []) known(id, papers.map(paper => paper.id), step.id)
+  for (const phase of step.timeline.phases ?? []) {
+    for (const id of phase.activeXrayParts ?? []) known(id, parts.map(part => part.id), phase.id)
+    for (const id of phase.flowPaths ?? []) known(id, flowPaths.map(path => path.id), phase.id)
+  }
 }
 for (const paper of papers) for (const id of paper.processIds) known(id, steps.map(step => step.id), paper.id)
 for (const path of flowPaths) {
@@ -28,3 +32,5 @@ for (const path of flowPaths) {
 export const viewerQuality: ViewerQuality = { dpr: [1, 1.5], contactShadows: true, shadowResolution: 128 }
 // Supply '/models/dmr-machine.glb' only after the verified model is available.
 export const modelUrl: string | null = null
+// No automatic recentering/scaling; opt in after verifying the model's coordinate frame.
+export const modelTransform: ModelTransform = {}
