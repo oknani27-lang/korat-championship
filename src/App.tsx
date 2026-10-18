@@ -24,7 +24,6 @@ export default function App() {
     <header className="navbar" onKeyDown={event => { if (event.key === 'Escape' && menu) { setMenu(false); menuButton.current?.focus() } }}>
       <a className="brand" href="#overview" aria-label="DEMETER ReFeed หน้าหลัก"><span className="brand-mark"><Recycle size={36} strokeWidth={2}/></span><span><strong>DEMETER</strong><small>ReFeed</small></span></a>
       <nav id="main-navigation" aria-label="เมนูหลัก" className={menu ? 'navigation open' : 'navigation'}>{links.map(([label, href]) => <a key={href} href={href} onClick={() => setMenu(false)}>{label}</a>)}</nav>
-      <button type="button" className="primary nav-cta" aria-pressed={simulator.state.demoMode} onClick={enterDemo}>Start Demo <ArrowRight size={19}/></button>
       <button ref={menuButton} className="menu-toggle" aria-controls="main-navigation" aria-label={menu ? 'ปิดเมนู' : 'เปิดเมนู'} aria-expanded={menu} onClick={() => setMenu(value => !value)}>{menu ? <X/> : <Menu/>}</button>
     </header>
     <main id="overview">

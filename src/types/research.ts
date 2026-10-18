@@ -9,6 +9,9 @@ export interface ResearchPaper {
   pdfUrl?: string
   summary: string
   processIds: string[]
+  componentIds?: string[]
+  category?: string
+  image?: { src: string; alt: string; sourceUrl: string; credit: string }
   supports: string[]
   limitations: string[]
   unverifiedClaims: string[]

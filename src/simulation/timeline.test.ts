@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
 import './infrastructure.test.ts'
 import { clampProgress, nextProgress, stepAtProgress, stepStart, validateTimeline } from './timeline.ts'
 import { checkPartMappings, findPart } from './parts.ts'
 import { parseFlows, parseParts, parseResearch, parseSteps, readData, validateReferences } from '../data/parse.ts'
-import { filterResearch } from '../data/research.ts'
+import { filterResearch, researchForStep } from '../data/research.ts'
 import { initialSimulator, reduceSimulator } from './simulator.ts'
 const steps = [{ timeline: { start: 0, end: 0.3 } }, { timeline: { start: 0.3, end: 1 } }]
 validateTimeline(steps)
@@ -100,3 +101,33 @@ assert.throws(()=>parseFlows([{id:'bad-route',partIds:[],points:[[0,0,0]]}]),/In
 assert.throws(()=>parseSteps([{...example,cameraFocus:{position:[0,0],target:[0,0,0]}}]),/Invalid process steps configuration: example/)
 assert.throws(()=>parseParts([null]),/Invalid machine parts configuration: item 1/)
 console.log('PASS: timeline, parts, research, configuration validation and filtering')
+const literature = parseResearch(JSON.parse(readFileSync(new URL('../data/research.json', import.meta.url), 'utf8')))
+const expectedResearch = [
+  ['R01','Continuous cultivation of microalgae yields high nutrient recovery from nitrified urine with limited supplementation','10.1016/j.jenvman.2023.118500'],
+  ['R02','Electrochemical in situ pH control enables chemical-free full urine nitrification with concomitant nitrate extraction','10.1021/acs.est.1c00041'],
+  ['R06','Implementation of an automated process for Limnospira indica harvesting and culture medium recycling for space applications','10.3389/fspas.2023.1229043'],
+  ['R13','Low-cost struvite production using source-separated urine in Nepal','10.1016/j.watres.2010.10.007'],
+  ['R14','Nanofiltration for the separation of pharmaceuticals from nutrients in source-separated urine','10.1016/j.watres.2006.01.038'],
+  ['R15','Complete nutrient recovery from source-separated urine by nitrification and distillation','10.1016/j.watres.2011.11.020'],
+]
+assert.deepEqual(literature.map(p=>[p.id,p.title,p.doi]),expectedResearch)
+assert(literature.every(p=>p.sourceUrl===`https://doi.org/${p.doi}` && p.processIds.length===0 && p.componentIds?.length && p.limitations.length && p.unverifiedClaims.length))
+const ids = (query: string) => filterResearch(literature,query,'').map(p=>p.id)
+assert.deepEqual(ids('2023'),['R01','R06']);assert.deepEqual(ids('de paepe'),['R01','R02'])
+assert.deepEqual(ids('Rabaey'),['R01','R02']);assert.deepEqual(ids('Couallier'),['R06'])
+assert.deepEqual(ids('R401'),['R01']);assert.deepEqual(ids('r13'),['R13']);assert.deepEqual(ids('quality control'),['R14'])
+assert.deepEqual(ids('Nanofiltration'),['R14']);assert.deepEqual(ids('not-in-research'),[])
+assert.deepEqual(filterResearch(literature,'','','Nitrification').map(p=>p.id),['R02'])
+assert.deepEqual(researchForStep(literature,simulatorSteps[0]),[])
+assert.deepEqual(researchForStep(literature,{...simulatorSteps[0],activeParts:['R201']}).map(p=>p.id),['R02','R15'])
+assert.deepEqual(researchForStep(literature,{...simulatorSteps[0],activeParts:['R401'],researchIds:['R01','unknown']}).map(p=>p.id),['R01'])
+assert.deepEqual(researchForStep(literature,undefined),[])
+assert.deepEqual(validateReferences(simulatorSteps,[],[],literature),[])
+assert.throws(()=>parseResearch([{...literature[0],category:42}]))
+assert.throws(()=>parseResearch([{...literature[0],componentIds:'R401'}]))
+console.log('PASS: six verified research records, metadata search, category filtering and honest step associations')
+for(const paper of literature){assert(paper.image?.alt && paper.image.credit && paper.image.sourceUrl.startsWith('https://'));const bytes=readFileSync(new URL(`../../public${paper.image.src}`,import.meta.url));assert(bytes.length>1000)}
+assert.equal(new Set(literature.map(p=>p.image?.src)).size,6)
+assert.throws(()=>parseResearch([{...literature[0],image:{...literature[0].image,src:'javascript:alert(1)'}}]))
+assert.throws(()=>parseResearch([{...literature[0],image:{...literature[0].image,alt:''}}]))
+console.log('PASS: six distinct local research figures and safe image metadata')

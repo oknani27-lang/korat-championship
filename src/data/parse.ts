@@ -58,7 +58,7 @@ function sourceUrl(value: unknown, localPdf = false): value is string {
   try { return ['http:', 'https:'].includes(new URL(value).protocol) } catch { return false }
 }
 export function parseResearch(data: unknown): ResearchPaper[] {
-  return list(data, (value): value is ResearchPaper => named(value) && typeof value.title === 'string' && value.title.trim().length > 0 && strings(value.authors) && typeof value.year === 'number' && Number.isInteger(value.year) && value.year > 0 && typeof value.publication === 'string' && sourceUrl(value.sourceUrl) && (value.pdfUrl === undefined || sourceUrl(value.pdfUrl, true)) && (value.doi === undefined || (typeof value.doi === 'string' && /^10\.\d{4,9}\/\S+$/.test(value.doi))) && typeof value.summary === 'string' && strings(value.processIds) && value.processIds.length > 0 && strings(value.supports) && strings(value.limitations) && strings(value.unverifiedClaims), 'research')
+  return list(data, (value): value is ResearchPaper => named(value) && typeof value.title === 'string' && value.title.trim().length > 0 && strings(value.authors) && typeof value.year === 'number' && Number.isInteger(value.year) && value.year > 0 && typeof value.publication === 'string' && sourceUrl(value.sourceUrl) && (value.pdfUrl === undefined || sourceUrl(value.pdfUrl, true)) && (value.doi === undefined || (typeof value.doi === 'string' && /^10\.\d{4,9}\/\S+$/.test(value.doi))) && typeof value.summary === 'string' && strings(value.processIds) && (value.componentIds === undefined || strings(value.componentIds)) && (value.category === undefined || (typeof value.category === 'string' && value.category.trim().length > 0)) && (value.image === undefined || (record(value.image) && sourceUrl(value.image.src, true) && typeof value.image.alt === 'string' && value.image.alt.trim().length > 0 && sourceUrl(value.image.sourceUrl) && typeof value.image.credit === 'string' && value.image.credit.trim().length > 0)) && strings(value.supports) && strings(value.limitations) && strings(value.unverifiedClaims), 'research')
 }
 
 export function readData<T>(data: unknown, parse: (data: unknown) => T[], label: string): { items: T[]; error: string | null } {
@@ -86,4 +86,3 @@ export function validateReferences(steps: ProcessStep[], parts: MachinePart[], p
   }
   return issues
 }
-

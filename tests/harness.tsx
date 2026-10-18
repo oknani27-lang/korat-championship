@@ -60,7 +60,8 @@ export function Harness() {
   const [selected, setSelected] = useState('none')
   const [source, setSource] = useState('/tests/missing.gltf')
   const mode = new URLSearchParams(location.search).get('case')
-  if (mode === 'research') return <ResearchSection articles={paperFixtures} processSteps={fixtures}/>
+  if (mode === 'research') return <ResearchSection articles={paperFixtures}/>
+  if (mode === 'research-empty') return <ResearchSection articles={[]}/>
   if (mode === 'integration' || mode === 'integration-normalized') return <><p>Generic software fixture only — no DMR equipment or scientific claims.</p><button onClick={() => setMounted(value => !value)}>{mounted ? 'Unmount' : 'Mount'}</button>{mounted && <IntegrationFixture normalized={mode === 'integration-normalized'}/>}</>
   if (mode?.startsWith('viewer-')) return <><button onClick={() => setSource('/tests/part-fixture.gltf')}>Switch source</button><section className="simulator"><ViewerBoundary><MachineViewer selectedPartId={simulator.state.selectedPartId} onSelectPart={simulator.selectPart} url={mode === 'viewer-missing' ? '/tests/missing.gltf' : mode === 'viewer-switch' ? source : '/tests/part-fixture.gltf'} registry={mode === 'viewer-invalid' ? invalidRegistry : validRegistry} quality={mode === 'viewer-low' ? {dpr:[1,1],contactShadows:false,shadowResolution:64} : undefined}/></ViewerBoundary></section></>
   return <><p>Test fixture only — not scientific data</p><button onClick={() => setMounted(value => !value)}>{mounted ? 'Unmount' : 'Mount'}</button>

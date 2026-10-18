@@ -1,1 +1,229 @@
-[]
+[
+  {
+    "id": "R01",
+    "title": "Continuous cultivation of microalgae yields high nutrient recovery from nitrified urine with limited supplementation",
+    "authors": [
+      "De Paepe, J.",
+      "Garcia Gragera, D.",
+      "Arnau Jimenez, C.",
+      "Rabaey, K.",
+      "Vlaeminck, S. E.",
+      "Godia, F."
+    ],
+    "year": 2023,
+    "publication": "Journal of Environmental Management",
+    "doi": "10.1016/j.jenvman.2023.118500",
+    "summary": "ศึกษาการนำปัสสาวะที่ผ่านไนตริฟิเคชันและเสริมธาตุอาหารมาใช้เพาะเลี้ยง Limnospira indica แบบต่อเนื่อง เพื่อสนับสนุนการหมุนเวียนสารอาหารกลับมาใช้ใหม่",
+    "category": "Cultivation",
+    "componentIds": [
+      "T302",
+      "R401"
+    ],
+    "supports": [
+      "การเพาะเลี้ยง Limnospira indica แบบต่อเนื่องด้วย nitrified urine ที่เสริมธาตุอาหารในระบบทดลอง"
+    ],
+    "limitations": [
+      "เงื่อนไขและผลการศึกษาไม่ใช่ผลทดลอง DMR 40 L",
+      "40 L เป็นความจุภาชนะ ส่วน working volume 32 L เป็นสมมติฐานของรายงานที่ต้องตรวจจากแบบจริง"
+    ],
+    "unverifiedClaims": [
+      "ยังไม่มีผลยืนยันสมรรถนะ DMR ครบวงจรหรือรับรองชีวมวลปลอดภัยสำหรับบริโภค"
+    ],
+    "sourceUrl": "https://doi.org/10.1016/j.jenvman.2023.118500",
+    "processIds": [],
+    "image": {
+      "src": "/research/R01.jpg",
+      "alt": "กราฟการเติบโตและไนเตรตในการทดลองอาหารเลี้ยง microalgae ของ De Paepe และคณะ",
+      "sourceUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0301479723012884-gr1.jpg",
+      "credit": "De Paepe et al. (2023) · Figure 1"
+    }
+  },
+  {
+    "id": "R02",
+    "title": "Electrochemical in situ pH control enables chemical-free full urine nitrification with concomitant nitrate extraction",
+    "authors": [
+      "De Paepe, J.",
+      "Clauwaert, P.",
+      "Gritti, M. C.",
+      "Ganigué, R.",
+      "Sas, B.",
+      "Vlaeminck, S. E.",
+      "Rabaey, K."
+    ],
+    "year": 2021,
+    "publication": "Environmental Science & Technology",
+    "doi": "10.1021/acs.est.1c00041",
+    "summary": "ศึกษาการควบคุม pH ด้วยไฟฟ้าเคมี เพื่อช่วยให้การเปลี่ยนแอมโมเนียมเป็นไนเตรตเกิดขึ้นได้อย่างสมบูรณ์ และลดความจำเป็นในการเติมสารด่างจากภายนอก",
+    "category": "Nitrification",
+    "componentIds": [
+      "EC101",
+      "R201"
+    ],
+    "supports": [
+      "การควบคุม pH ด้วยเซลล์ไฟฟ้าเคมีร่วมกับ full nitrification ในชุดทดลองของผู้วิจัย"
+    ],
+    "limitations": [
+      "EC101 ซึ่งเป็นแนวคิดชุดทำให้เสถียรของ DMR ไม่ใช่อุปกรณ์ควบคุม pH ในงานทดลองโดยอัตโนมัติ",
+      "ต้องยืนยันโหลดและขนาด R201 ด้วย pilot ก่อนนำผลมาใช้"
+    ],
+    "unverifiedClaims": [
+      "ยังไม่ยืนยันสมรรถนะ EC101 และ R201 ในเครื่อง DMR จริง"
+    ],
+    "sourceUrl": "https://doi.org/10.1021/acs.est.1c00041",
+    "processIds": [],
+    "image": {
+      "src": "/research/R02.png",
+      "alt": "แผนภาพ electrochemical pH control เชื่อม bioreactor กับเซลล์ไฟฟ้าเคมีในงานต้นฉบับ",
+      "sourceUrl": "https://repository.uantwerpen.be/docstore/d:irua:7218#page=4",
+      "credit": "De Paepe et al. (2021) · Graphical abstract"
+    }
+  },
+  {
+    "id": "R06",
+    "title": "Implementation of an automated process for Limnospira indica harvesting and culture medium recycling for space applications",
+    "authors": [
+      "Tallec, J.",
+      "Vandermies, M.",
+      "Coene, C.",
+      "Lamaze-Lefebvre, B.",
+      "Demey, D.",
+      "Frappart, M.",
+      "Couallier, E."
+    ],
+    "year": 2023,
+    "publication": "Frontiers in Astronomy and Space Sciences",
+    "doi": "10.3389/fspas.2023.1229043",
+    "summary": "พัฒนาระบบเก็บเกี่ยวสาหร่าย Limnospira indica แบบอัตโนมัติด้วยการกรอง พร้อมนำอาหารเลี้ยงกลับมาใช้ใหม่สำหรับการประยุกต์ด้านอวกาศ",
+    "category": "Harvesting & Recycling",
+    "componentIds": [
+      "F501",
+      "T501"
+    ],
+    "supports": [
+      "การเก็บเกี่ยว Limnospira indica ด้วยการกรองอัตโนมัติและการคืน culture medium ในระบบทดลอง"
+    ],
+    "limitations": [
+      "การเกิด cake และ fouling จำกัดการทำงานระยะยาว",
+      "ผลทดลองไม่ใช่ค่ารับประกัน F501 หรือ T501 ของ DMR"
+    ],
+    "unverifiedClaims": [
+      "ยังไม่ยืนยันประสิทธิภาพการเก็บเกี่ยวและการล้างชีวมวล DMR"
+    ],
+    "sourceUrl": "https://doi.org/10.3389/fspas.2023.1229043",
+    "processIds": [],
+    "image": {
+      "src": "/research/R06.jpg",
+      "alt": "ผัง photobioreactor, biomass harvesting unit และ medium filtration unit จากงาน BioHarvest",
+      "sourceUrl": "https://www.frontiersin.org/journals/astronomy-and-space-sciences/articles/10.3389/fspas.2023.1229043/full#F2",
+      "credit": "Tallec et al. (2023) · Figure 2 · CC BY"
+    }
+  },
+  {
+    "id": "R13",
+    "title": "Low-cost struvite production using source-separated urine in Nepal",
+    "authors": [
+      "Etter, B.",
+      "Tilley, E.",
+      "Khadka, R.",
+      "Udert, K. M."
+    ],
+    "year": 2011,
+    "publication": "Water Research",
+    "doi": "10.1016/j.watres.2010.10.007",
+    "summary": "ศึกษาการกู้คืนฟอสฟอรัสจากปัสสาวะผ่านการตกผลึก Struvite เพื่อนำสารอาหารกลับมาใช้ประโยชน์ โดยผลึกที่กู้คืนไม่ได้เป็น food-grade โดยอัตโนมัติ",
+    "category": "Phosphorus Recovery",
+    "componentIds": [
+      "R102"
+    ],
+    "supports": [
+      "การตกผลึก struvite เพื่อกู้คืนฟอสฟอรัสสำหรับการใช้เป็นปุ๋ย"
+    ],
+    "limitations": [
+      "R102 เป็นแขนงกู้ฟอสฟอรัส ต้องตรวจองค์ประกอบและคุณภาพก่อนนำกลับ",
+      "ตะกอนจาก alkalization ไม่ใช่ struvite บริสุทธิ์ทั้งหมดโดยอัตโนมัติ"
+    ],
+    "unverifiedClaims": [
+      "ไม่มีหลักฐานรับรองผลึก DMR เป็นสารอาหาร food-grade"
+    ],
+    "sourceUrl": "https://doi.org/10.1016/j.watres.2010.10.007",
+    "processIds": [],
+    "image": {
+      "src": "/research/R13.jpg",
+      "alt": "แผนภาพถังตกผลึก struvite และชุดกรองสองรูปแบบในงานวิจัยที่เนปาล",
+      "sourceUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0043135410007025-gr1.jpg",
+      "credit": "Etter et al. (2011) · Figure 1"
+    }
+  },
+  {
+    "id": "R14",
+    "title": "Nanofiltration for the separation of pharmaceuticals from nutrients in source-separated urine",
+    "authors": [
+      "Pronk, W.",
+      "Palmquist, H.",
+      "Biebow, M.",
+      "Boller, M."
+    ],
+    "year": 2006,
+    "publication": "Water Research",
+    "doi": "10.1016/j.watres.2006.01.038",
+    "summary": "ศึกษาการใช้ Nanofiltration เพื่อแยกสารปนเปื้อนประเภทยาออกจากสารอาหารในปัสสาวะ โดยประสิทธิภาพขึ้นอยู่กับชนิดของสารและสภาวะการกรอง เป็นแนวทางที่ยังต้องทดสอบกับ DMR",
+    "category": "Quality Control",
+    "componentIds": [
+      "T301"
+    ],
+    "supports": [
+      "nanofiltration เป็น candidate treatment ที่ต้องตรวจการแยกสารแต่ละชนิดภายใต้เงื่อนไขทดลอง"
+    ],
+    "limitations": [
+      "ไม่ใช่การกำจัดยาได้เท่ากันทุกชนิด และ matrix เป็น nonhydrolysed urine",
+      "T301 เป็นถังกักและตรวจ ไม่ใช่การยืนยันว่าติดตั้ง nanofiltration แล้ว"
+    ],
+    "unverifiedClaims": [
+      "ยังไม่ยืนยันว่า DMR กำจัดสารปนเปื้อนทั้งหมดหรือได้สารอาหารปลอดภัยต่อการบริโภค"
+    ],
+    "sourceUrl": "https://doi.org/10.1016/j.watres.2006.01.038",
+    "processIds": [],
+    "image": {
+      "src": "/research/R14.jpg",
+      "alt": "กราฟการดูดซับสารยาระหว่างการกรองจากงานวิจัย nanofiltration ต้นฉบับ",
+      "sourceUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0043135406000777-gr1.jpg",
+      "credit": "Pronk et al. (2006) · Figure 1"
+    }
+  },
+  {
+    "id": "R15",
+    "title": "Complete nutrient recovery from source-separated urine by nitrification and distillation",
+    "authors": [
+      "Udert, K. M.",
+      "Wächter, M."
+    ],
+    "year": 2012,
+    "publication": "Water Research",
+    "doi": "10.1016/j.watres.2011.11.020",
+    "summary": "ศึกษาการกู้คืนธาตุอาหารจากปัสสาวะด้วยไนตริฟิเคชันร่วมกับการกลั่น เพื่อแยกน้ำและทำให้สารอาหารเข้มข้นสำหรับนำกลับมาใช้ใหม่ งานนี้ใช้ไนตริฟิเคชันบางส่วนและไม่ได้รับรองน้ำดื่ม",
+    "category": "Nutrient & Water Recovery",
+    "componentIds": [
+      "R201",
+      "W601"
+    ],
+    "supports": [
+      "การผสาน partial nitrification กับ distillation เพื่อกู้สารอาหารและแยกน้ำในชุดทดลอง"
+    ],
+    "limitations": [
+      "ห้ามตีความ partial nitrification ว่าเป็น full nitrification",
+      "น้ำกู้คืนต้องผ่านเกณฑ์คุณภาพแยกต่างหาก และไม่กลั่นเกลือไนเตรตจนแห้งใน DMR"
+    ],
+    "unverifiedClaims": [
+      "ยังไม่รับรองน้ำกู้คืน DMR ว่าปลอดภัยสำหรับบริโภค",
+      "ยังไม่มีผลยืนยัน DMR ครบวงจร"
+    ],
+    "sourceUrl": "https://doi.org/10.1016/j.watres.2011.11.020",
+    "processIds": [],
+    "image": {
+      "src": "/research/R15.gif",
+      "alt": "กราฟความสัมพันธ์ระหว่าง pH อัตรา nitrification และอัตราส่วนไนเตรตต่อแอมโมเนียมในงานต้นฉบับ",
+      "sourceUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0043135411007044-gr1.gif",
+      "credit": "Udert & Wächter (2012) · Figure 1"
+    }
+  }
+]

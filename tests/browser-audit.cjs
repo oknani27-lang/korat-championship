@@ -100,7 +100,8 @@ async function openParts(page){if(!await page.locator('.parts-panel').isVisible(
       await page.setViewportSize({width,height:width<600?844:1050});await ready(page);
       assert(await page.getByRole('slider').isDisabled());
       const initial=await state(page,'capture');
-      for(const selector of width>1100?['.nav-cta','.hero-cta','.hero-cta']:['.hero-cta','.hero-cta']){
+      assert.equal(await page.locator('.navbar').getByRole('button',{name:'Start Demo',exact:true}).count(),0);
+      for(const selector of ['.hero-cta','.hero-cta']){
         await page.evaluate(()=>scrollTo(0,0));await page.waitForTimeout(250);
         const before=await page.evaluate(()=>({y:scrollY,hash:location.hash,top:document.querySelector('#simulator').getBoundingClientRect().top}));
         await page.locator(selector).click();await page.waitForTimeout(500);
@@ -282,13 +283,29 @@ async function openParts(page){if(!await page.locator('.parts-panel').isVisible(
     await page.route('**/tests/missing.gltf', route => route.fulfill({status:404,body:'Missing test fixture'}));
     await page.goto(base+'/tests/harness.html?case=missing'); await page.getByRole('alert').waitFor(); assert(await page.getByRole('button',{name:'Unmount',exact:true}).isVisible());
   });
-  await test('Research navigation, honest empty state, search and process filters', async (page,{errors,failures})=>{
-    await ready(page);await page.getByRole('navigation').getByRole('link',{name:'Research',exact:true}).click();assert.equal(new URL(page.url()).hash,'#research');assert(await page.getByRole('heading',{name:'รอเอกสารงานวิจัยฉบับยืนยัน'}).isVisible());assert(await page.getByRole('searchbox',{name:'ค้นหางานวิจัย'}).isDisabled());
-    await page.goto(base+'/tests/harness.html?case=research');const search=page.getByRole('searchbox',{name:'ค้นหางานวิจัย'});await page.locator('.research-card').first().waitFor();assert.equal(await page.locator('.research-card').count(),2);
-    await search.fill('fixture A');assert.equal(await page.locator('.research-card').count(),1);await page.getByRole('combobox').selectOption('fixture-2');assert.equal(await page.locator('.research-card').count(),0);await page.getByRole('button',{name:'ล้างตัวกรอง'}).click();assert.equal(await page.locator('.research-card').count(),2);
-    await page.getByRole('combobox').selectOption('fixture-2');assert.match(await page.locator('.research-card h3').innerText(),/fixture B/);assert.equal(await page.locator('.paper-links a').getAttribute('rel'),'noopener noreferrer');
+  await test('Research navigation, honest empty state and cards without search or filters', async (page,{errors,failures})=>{
+    await ready(page);await page.getByRole('navigation').getByRole('link',{name:'Research',exact:true}).click();assert.equal(new URL(page.url()).hash,'#research');assert.equal(await page.locator('.research-card').count(),6);
+    assert.equal(await page.locator('#research input,#research select').count(),0);
+    await page.goto(base+'/tests/harness.html?case=research-empty');assert(await page.getByRole('heading',{name:'รอเอกสารงานวิจัยฉบับยืนยัน'}).isVisible());assert.equal(await page.locator('#research input,#research select,#research img').count(),0);
+    await page.goto(base+'/tests/harness.html?case=research');await page.locator('.research-card').first().waitFor();assert.equal(await page.locator('.research-card').count(),2);assert.equal(await page.locator('#research input,#research select').count(),0);assert.equal(await page.locator('.paper-links a').first().getAttribute('rel'),'noopener noreferrer');
     await page.setViewportSize({width:390,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:path.join(output,'research-fixture-390.png'),fullPage:true});
     assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
+  });
+  await test('Six research records with one loaded original figure each and responsive cards',async(page,{errors,failures})=>{
+    await ready(page);const data=JSON.parse(await fs.readFile(path.join(__dirname,'../src/data/research.json'),'utf8'));
+    assert.equal(await page.getByRole('button',{name:'Start Demo',exact:true}).count(),1);assert.equal(await page.locator('.navbar .nav-cta').count(),0);
+    assert.equal(await page.locator('.data-notice').count(),0);assert.equal(await page.locator('.process-references a').count(),0);
+    assert.deepEqual(await page.locator('.research-card h3').allTextContents(),data.map(p=>p.title));
+    assert.equal(new Set(await page.locator('.research-card').evaluateAll(nodes=>nodes.map(n=>n.dataset.researchId))).size,6);
+    assert.equal(await page.locator('#research input,#research select,.research-filters').count(),0);
+    for(const paper of data){const card=page.locator(`[data-research-id="${paper.id}"]`);assert.equal(await card.locator(':scope > *').count(),5);const link=card.getByRole('link',{name:'อ่านงานวิจัยต้นฉบับ',exact:true});assert.equal(await link.getAttribute('href'),`https://doi.org/${paper.doi}`);assert.equal(await link.getAttribute('target'),'_blank');assert.equal(await link.getAttribute('rel'),'noopener noreferrer');assert.equal(await card.locator('.paper-doi,.research-tags,.evidence-columns,svg').count(),0);assert.equal(await card.locator('img').count(),1);assert.equal(await card.locator('img').getAttribute('src'),paper.image.src);assert.equal(await card.locator('img').getAttribute('alt'),paper.image.alt);assert.equal(await card.locator('figcaption a').getAttribute('href'),paper.image.sourceUrl);assert.equal(await card.locator('figcaption a').getAttribute('rel'),'noopener noreferrer');await card.scrollIntoViewIfNeeded();await page.waitForFunction(id=>{const img=document.querySelector(`[data-research-id="${id}"] img`);return img.complete&&img.naturalWidth>0},paper.id);assert.equal(await card.locator('img').evaluate(img=>getComputedStyle(img).objectFit),'contain');}
+    for(const width of [1440,1280,768,390,320]){await page.setViewportSize({width,height:width<600?844:1050});await page.waitForTimeout(100);assert.equal(await page.locator('.research-list').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length),width>580?2:1);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.equal(await page.locator('.research-card').evaluateAll(nodes=>nodes.some(el=>el.scrollWidth>el.clientWidth+1)),false);await page.locator('#research').screenshot({path:path.join(output,`research-${width}.png`)});}
+    assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
+  });
+  await test('Research links appear only for a related expanded process step',async(page,{errors,failures})=>{
+    const step={id:'reference-fixture',title:'Generic reference UI fixture',subtitle:'UI test only',description:'Not a DMR scientific step',formulas:[],outputs:[],activeParts:[],flowPaths:[],researchIds:['R01'],cameraFocus:null,timeline:{start:0,end:1}};
+    await page.route('**/src/data/process-steps.json*',route=>route.fulfill({contentType:'application/javascript',body:'export default '+JSON.stringify([step])}));await ready(page);assert.equal(await page.locator('.data-notice').count(),0);
+    const link=page.locator('.process-references a');assert.equal(await link.count(),1);assert.equal(await page.locator('#sheet-content').getAttribute('aria-hidden'),'true');assert.equal(await link.evaluate(el=>{el.focus();return el===document.activeElement}),false);await page.locator('.hero-cta').click();assert.equal(await page.locator('#sheet-content').getAttribute('aria-hidden'),'true');await page.getByRole('button',{name:'ดูรายละเอียด',exact:true}).click();assert.equal(await page.locator('#sheet-content').getAttribute('aria-hidden'),'false');assert.match(await link.innerText(),/R01/);await link.click();assert.equal(new URL(page.url()).hash,'#research');assert.equal(await page.locator('.research-card').count(),6);assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
   });
   await test('Missing process metadata stays readable instead of crashing',async(page,{errors,failures})=>{
     await page.route('**/src/data/process-steps.json*',route=>route.fulfill({contentType:'application/javascript',body:'export default []'}));await ready(page);assert(await page.locator('.data-notice').isVisible());assert(await page.getByRole('heading',{name:'รอข้อมูลกระบวนการ',exact:true}).isVisible());assert.equal(await page.getByRole('slider').count(),0);assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
