@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import './infrastructure.test.ts'
 import { clampProgress, nextProgress, stepAtProgress, stepStart, validateTimeline } from './timeline.ts'
 import { checkPartMappings, findPart } from './parts.ts'
-import { parseFlows, parseParts, parseResearch, parseSteps, readData } from '../data/parse.ts'
+import { parseFlows, parseParts, parseResearch, parseSteps, readData, validateReferences } from '../data/parse.ts'
 import { filterResearch } from '../data/research.ts'
 import { initialSimulator, reduceSimulator } from './simulator.ts'
 const steps = [{ timeline: { start: 0, end: 0.3 } }, { timeline: { start: 0.3, end: 1 } }]
@@ -78,4 +78,20 @@ assert.equal(readData([],parseSteps,'process').items.length,0)
 assert.match(readData([],parseSteps,'process').error ?? '',/At least one/)
 assert.deepEqual(checkPartMappings({getObjectByName:name=>name==='NamedAssembly' ? {} : undefined},[part]),[])
 assert.deepEqual(checkPartMappings({getObjectByName:()=>undefined},[part]),[{partId:'tank',nodeName:'NamedAssembly'}])
+const connected = parseParts([{...part,connectionPoints:[{id:'out',position:[0,0,0]}]}])
+const route = parseFlows([{id:'route',partIds:['tank'],points:[[0,0,0],[1,0,0]],from:{partId:'tank',connectionId:'out'}}])
+const referenced = parseSteps([{...example,activeParts:['tank'],activeXrayParts:['tank'],flowPaths:['route'],researchIds:['ui-fixture'],timeline:{start:0,end:1,phases:[{id:'phase',start:0,end:1,activeXrayParts:['tank'],flowPaths:['route']}]}}])
+assert.deepEqual(validateReferences(referenced,connected,route,references),[])
+const issues = validateReferences(referenced,[],[],[])
+assert(issues.some(issue=>issue.includes('example:') && issue.includes('tank')))
+assert(issues.some(issue=>issue.includes('example/phase:') && issue.includes('route')))
+assert(issues.some(issue=>issue.includes('ui-fixture')))
+assert.match(validateReferences([],connected,route,references).join('\n'),/ui-fixture:.*example/)
+assert.match(validateReferences([],[],route,[]).join('\n'),/route:.*tank\/out/)
+assert.match(validateReferences([],connected,[{...route[0],to:{partId:'tank',connectionId:'missing'}}],[]).join('\n'),/route:.*tank\/missing/)
+assert.match(validateReferences([],connected,[{...route[0],partIds:['unknown']}],[]).join('\n'),/route:.*unknown/)
+assert.throws(()=>parseParts([{...part,connectionPoints:[{id:'out',position:[0,0,0]},{id:'out',position:[1,0,0]}]}]))
+const invalidFocus = readData([{...example,cameraFocus:{position:[1,1,1],target:[1,1,1]}}],parseSteps,'process')
+assert.deepEqual(invalidFocus.items,[]); assert.match(invalidFocus.error ?? '',/Invalid camera focus: example/)
+assert.throws(()=>parseSteps([{...example,activeParts:undefined}]))
 console.log('PASS: timeline, parts, research, configuration validation and filtering')

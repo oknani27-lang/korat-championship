@@ -293,6 +293,20 @@ async function openParts(page){if(!await page.locator('.parts-panel').isVisible(
   await test('Missing process metadata stays readable instead of crashing',async(page,{errors,failures})=>{
     await page.route('**/src/data/process-steps.json*',route=>route.fulfill({contentType:'application/javascript',body:'export default []'}));await ready(page);assert(await page.locator('.data-notice').isVisible());assert(await page.getByRole('heading',{name:'รอข้อมูลกระบวนการ',exact:true}).isVisible());assert.equal(await page.getByRole('slider').count(),0);assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
   });
+  await test('Integration validation reports invalid references, camera, parts and connections without crashing',async(page,{errors,failures})=>{
+    const step={id:'validation-step',title:'Generic validation fixture',subtitle:'UI only',description:'Not scientific data',formulas:[],outputs:[],activeParts:['missing-part'],flowPaths:['missing-path'],researchIds:['missing-paper'],cameraFocus:null,timeline:{start:0,end:1,phases:[{id:'phase',start:0,end:1,activeXrayParts:['missing-shell'],flowPaths:['missing-phase-path']}]}};
+    const part={id:'generic-part',nodeName:'GenericNode',label:'Generic fixture',focus:null,connectionPoints:[{id:'out',position:[0,0,0]}]};
+    const flow={id:'validation-flow',partIds:['missing-part'],points:[[0,0,0],[1,0,0]],from:{partId:'generic-part',connectionId:'missing-connection'}};
+    let processData=[step],partData=[part];
+    for(const [file,data] of [['process-steps',()=>processData],['machine-parts',()=>partData],['flow-paths',()=>[flow]]])await page.route(`**/src/data/${file}.json*`,route=>route.fulfill({contentType:'application/javascript',body:'export default '+JSON.stringify(data())}));
+    await ready(page);const notice=page.locator('.data-notice');
+    for(const id of ['missing-part','missing-path','missing-paper','validation-step/phase','missing-shell','missing-phase-path','validation-flow','generic-part/missing-connection'])assert((await notice.innerText()).includes(id));
+    await page.locator('.hero-cta').click();assert.equal(await page.getByRole('slider').count(),1);
+    processData=[{...step,cameraFocus:{position:[1,1,1],target:[1,1,1]}}];await ready(page);assert.match(await notice.innerText(),/Invalid camera focus: validation-step/);assert.equal(await page.getByRole('slider').count(),0);
+    processData=[{...step,activeParts:[],flowPaths:[],researchIds:[],timeline:{start:0,end:1}}];partData=[part,part];await ready(page);assert.match(await notice.innerText(),/Duplicate machine parts id/);
+    partData=[{...part,connectionPoints:[{id:'out',position:[0,0]}]}];await ready(page);assert.match(await notice.innerText(),/Invalid machine parts configuration/);assert.equal(await page.locator('canvas').count(),1);
+    assert.equal(new URL(page.url()).pathname,'/');assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
+  });
   await test('Model loading and invalid component mappings preserve the Canvas',async(page)=>{
     let release;const gate=new Promise(resolve=>{release=resolve});await routeModelFixture(page,gate);await ready(page,'/tests/harness.html?case=viewer-low');await page.locator('.model-notice[role=status]').waitFor();const initial=(await state(page)).scene;release();await page.locator('.model-notice[role=status]').waitFor({state:'hidden'});assert.equal((await state(page)).scene,initial);assert.equal((await state(page)).pixelRatio,1);assert.equal(await page.locator('canvas').count(),1);
     await page.goto(base+'/tests/harness.html?case=viewer-invalid');await page.locator('.model-notice[role=alert]').waitFor();assert.match(await page.locator('.model-notice').innerText(),/MissingNode/);await secondary(page, 'รายการชิ้นส่วน');assert(await page.getByRole('button',{name:'Missing test node',exact:true}).isDisabled());assert.equal(await page.locator('canvas').count(),1);

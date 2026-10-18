@@ -75,3 +75,11 @@ Unit coverage includes hierarchy/registry, explicit normalization, invalid mappi
 Browser coverage includes the existing UI/Start Demo/controls/timeline/research/fallback checks plus generic hover/selection, click-through X-Ray, interruptible focus and repeated Reset, multiple reversible flows, invalid assets, explicit normalized bounds and repeated Canvas disposal. Test fixtures do not constitute scientific validation.
 
 Known upstream warning: R3F constructs deprecated `THREE.Clock`. The viewer also remains above Vite's 500KB advisory threshold. Neither warning is suppressed. See the delivered Phase 2A report for actual measured results and screenshots. No real DMR model, GPU FPS target or cross-browser hardware performance has been validated.
+
+## Phase 2B essential validation
+
+`parseParts`, `parseFlows` and `parseSteps` already reject duplicate IDs, malformed/non-finite connection coordinates, invalid routes and missing required step fields. Optional flow endpoints may be omitted for standalone procedural routes; when provided, both the part and connection must exist. Runtime model registration reports missing/ambiguous GLB nodes without taking down the page.
+
+`validateReferences(steps, parts, paths, papers)` is the existing configuration reference check exposed from `src/data/parse.ts` for direct generic regression tests. `config.ts` passes its diagnostics to the existing page notice. Messages identify the referring step/phase/path/paper and missing ID or connection. Invalid datasets use `readData`'s empty fallback; valid unrelated sections stay available. Explicit camera position and target must be finite 3D vectors at different positions; coincident poses are now rejected with the step ID.
+
+Unit and browser tests exercise valid references, unknown part/path/research/process IDs, unknown connections, duplicate parts, malformed connection coordinates and coincident camera poses. No real model or scientific metadata is included. Validate the actual GLB names and coordinate frame when integrating it.

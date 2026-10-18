@@ -24,6 +24,7 @@ export function parseSteps(data: unknown): ProcessStep[] {
   const steps = list(data, isStep, 'process steps')
   validateTimeline(steps)
   for (const step of steps) {
+    if (step.cameraFocus && step.cameraFocus.position.every((n, i) => n === step.cameraFocus!.target[i])) throw new Error(`Invalid camera focus: ${step.id}; position and target must differ`)
     const phases = step.timeline.phases
     if (phases !== undefined && (!Array.isArray(phases) || phases.some(phase => !named(phase) || !Number.isFinite(phase.start) || !Number.isFinite(phase.end) || phase.start < step.timeline.start || phase.end > step.timeline.end || phase.end <= phase.start || (phase.activeXrayParts !== undefined && !strings(phase.activeXrayParts)) || (phase.flowPaths !== undefined && !strings(phase.flowPaths)) || (phase.effectIds !== undefined && !strings(phase.effectIds))) || new Set(phases.map(phase => phase.id)).size !== phases.length)) throw new Error(`Invalid timeline phases: ${step.id}`)
   }
@@ -58,5 +59,26 @@ export function parseResearch(data: unknown): ResearchPaper[] {
 export function readData<T>(data: unknown, parse: (data: unknown) => T[], label: string): { items: T[]; error: string | null } {
   try { return { items: parse(data), error: null } }
   catch (error) { return { items: [], error: `${label}: ${error instanceof Error ? error.message : String(error)}` } }
+}
+
+// Shared by configuration loading and generic regression fixtures.
+export function validateReferences(steps: ProcessStep[], parts: MachinePart[], paths: FlowPath[], papers: ResearchPaper[]): string[] {
+  const issues: string[] = []
+  const known = (id: string, ids: string[], context: string) => { if (!ids.includes(id)) issues.push(`${context}: ไม่พบ ID ${id}`) }
+  for (const step of steps) {
+    for (const id of [...step.activeParts, ...(step.activeXrayParts ?? [])]) known(id, parts.map(part => part.id), step.id)
+    for (const id of step.flowPaths) known(id, paths.map(path => path.id), step.id)
+    for (const id of step.researchIds ?? []) known(id, papers.map(paper => paper.id), step.id)
+    for (const phase of step.timeline.phases ?? []) {
+      for (const id of phase.activeXrayParts ?? []) known(id, parts.map(part => part.id), `${step.id}/${phase.id}`)
+      for (const id of phase.flowPaths ?? []) known(id, paths.map(path => path.id), `${step.id}/${phase.id}`)
+    }
+  }
+  for (const paper of papers) for (const id of paper.processIds) known(id, steps.map(step => step.id), paper.id)
+  for (const path of paths) {
+    for (const id of path.partIds) known(id, parts.map(part => part.id), path.id)
+    for (const end of [path.from, path.to]) if (end && !parts.some(part => part.id === end.partId && part.connectionPoints?.some(point => point.id === end.connectionId))) issues.push(`${path.id}: ไม่พบจุดเชื่อมต่อ ${end.partId}/${end.connectionId}`)
+  }
+  return issues
 }
 
