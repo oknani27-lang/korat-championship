@@ -80,7 +80,7 @@ async function infrastructure(page) {
     const flows={};root.scene.traverse(node=>{if(/^flow:.*:marker$/.test(node.name))flows[node.name]=node.position.toArray()});
     const model=root.scene.getObjectByName('ModelInstance');let bounds=null;
     if(model){const threeUrl=performance.getEntriesByType('resource').find(r=>r.name.includes('/three.js')).name;const {Box3,Vector3}=await import(threeUrl);const box=new Box3().setFromObject(model);bounds={center:box.getCenter(new Vector3()).toArray(),size:box.getSize(new Vector3()).toArray()};}
-    return {meshes,flows,bounds,target:root.controls.target.toArray(),position:root.camera.position.toArray(),memory:{...root.gl.info.memory},frames:root.gl.info.render.frame,drawCalls:root.gl.info.render.calls};
+    return {scene:root.scene.uuid,meshes,flows,bounds,target:root.controls.target.toArray(),position:root.camera.position.toArray(),memory:{...root.gl.info.memory},frames:root.gl.info.render.frame,drawCalls:root.gl.info.render.calls};
   });
 }
 async function pointAtNode(page,name) {
@@ -303,8 +303,8 @@ async function openParts(page){if(!await page.locator('.parts-panel').isVisible(
     for(const id of ['missing-part','missing-path','missing-paper','validation-step/phase','missing-shell','missing-phase-path','validation-flow','generic-part/missing-connection'])assert((await notice.innerText()).includes(id));
     await page.locator('.hero-cta').click();assert.equal(await page.getByRole('slider').count(),1);
     processData=[{...step,cameraFocus:{position:[1,1,1],target:[1,1,1]}}];await ready(page);assert.match(await notice.innerText(),/Invalid camera focus: validation-step/);assert.equal(await page.getByRole('slider').count(),0);
-    processData=[{...step,activeParts:[],flowPaths:[],researchIds:[],timeline:{start:0,end:1}}];partData=[part,part];await ready(page);assert.match(await notice.innerText(),/Duplicate machine parts id/);
-    partData=[{...part,connectionPoints:[{id:'out',position:[0,0]}]}];await ready(page);assert.match(await notice.innerText(),/Invalid machine parts configuration/);assert.equal(await page.locator('canvas').count(),1);
+    processData=[{...step,activeParts:[],flowPaths:[],researchIds:[],timeline:{start:0,end:1}}];partData=[part,part];await ready(page);assert.match(await notice.innerText(),/Duplicate machine parts id: generic-part/);
+    partData=[{...part,connectionPoints:[{id:'out',position:[0,0]}]}];await ready(page);assert.match(await notice.innerText(),/Invalid machine parts configuration: generic-part/);assert.equal(await page.locator('canvas').count(),1);
     assert.equal(new URL(page.url()).pathname,'/');assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
   });
   await test('Model loading and invalid component mappings preserve the Canvas',async(page)=>{
@@ -331,6 +331,22 @@ async function openParts(page){if(!await page.locator('.parts-panel').isVisible(
     for(let i=0;i<5;i++){await page.getByRole('button',{name:'Generic object C',exact:true}).click();await page.getByRole('button',{name:'คืนมุมมองเริ่มต้น',exact:true}).click()}
     await page.waitForTimeout(300);assert(near((await infrastructure(page)).position,initial.position));assert.equal((await infrastructure(page)).meshes.ShellA.material,originalMaterial);
     assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
+  });
+  await test('Outgoing camera focus stops on step change and immediate deselection',async(page,{errors,failures})=>{
+    await ready(page,'/tests/harness.html?case=integration');await page.waitForTimeout(400);
+    const initial=await infrastructure(page);await page.getByRole('button',{name:'Start Demo',exact:true}).click();
+    await page.evaluate(()=>[...document.querySelectorAll('button')].find(b=>b.textContent.includes('ถัดไป')).click());
+    await page.waitForFunction(()=>document.querySelector('.canvas-wrap').dataset.activeStep==='generic-2');
+    await page.evaluate(()=>[...document.querySelectorAll('button')].find(b=>b.textContent.includes('ก่อนหน้า')).click());
+    await page.waitForFunction(()=>document.querySelector('.canvas-wrap').dataset.activeStep==='generic-1');
+    const switched=await infrastructure(page);await page.waitForTimeout(650);
+    assert(near((await infrastructure(page)).position,switched.position),'outgoing step autofocus must stop');assert(near((await infrastructure(page)).target,switched.target));
+    await openParts(page);await page.getByRole('button',{name:'Generic object C',exact:true}).click();
+    await page.evaluate(()=>[...document.querySelectorAll('button')].find(b=>b.textContent==='Generic object C').click());
+    await page.waitForFunction(()=>document.querySelector('#generic-selection').textContent==='none');
+    const deselected=await infrastructure(page);await page.waitForTimeout(650);assert(near((await infrastructure(page)).position,deselected.position),'deselection must cancel pending focus');
+    await page.getByRole('button',{name:'คืนมุมมองเริ่มต้น',exact:true}).click();await page.waitForTimeout(150);assert(near((await infrastructure(page)).position,initial.position));assert(near((await infrastructure(page)).target,initial.target));
+    assert.equal((await infrastructure(page)).scene,initial.scene);assert.deepEqual(errors,[]);assert.deepEqual(failures,[]);
   });
   await test('Timeline X-Ray shells, click-through, multiple reversible flow paths and bounded resources',async(page,{errors,failures})=>{
     await ready(page,'/tests/harness.html?case=integration');await page.waitForTimeout(400);

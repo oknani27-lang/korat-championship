@@ -81,10 +81,12 @@ export const MachineViewer = memo(function MachineViewer({ url = modelUrl, regis
       const box = instance.current?.partBounds(selectedPartId)
       if (box && !box.isEmpty()) { const focus = registry.find(part => part.id === selectedPartId)?.focus; if (focus) box.translate(new Vector3(...focus).sub(box.getCenter(new Vector3()))); cameraMotion.current?.focus(box) }
     }
+    return cameraMotion.current?.cancel
   }, [selectedPartId, loading, modelError, url, registry])
   useEffect(() => {
     if (demoMode && activeStep?.cameraFocus && !loading && !modelError && instance.current) cameraMotion.current?.focus(activeStep.cameraFocus)
-  }, [demoMode, activeStep?.cameraFocus, loading, modelError, url])
+    return cameraMotion.current?.cancel
+  }, [demoMode, activeStep?.id, activeStep?.cameraFocus, loading, modelError, url])
   useEffect(() => { if (contextLost) cameraMotion.current?.cancel() }, [contextLost])
   function reset() { setSelected(null); cameraMotion.current?.reset() }
   function zoom(factor: number) { cameraMotion.current?.zoom(factor) }

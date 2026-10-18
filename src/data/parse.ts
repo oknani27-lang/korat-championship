@@ -8,8 +8,13 @@ const vector = (value: unknown): value is Vec3 => Array.isArray(value) && value.
 const named = (value: unknown): value is Record<string, unknown> & { id: string } => record(value) && typeof value.id === 'string' && value.id.trim().length > 0
 
 function list<T extends { id: string }>(data: unknown, valid: (value: unknown) => value is T, label: string): T[] {
-  if (!Array.isArray(data) || !data.every(valid)) throw new Error(`Invalid ${label} configuration`)
-  if (new Set(data.map(item => item.id)).size !== data.length) throw new Error(`Duplicate ${label} id`)
+  if (!Array.isArray(data)) throw new Error(`Invalid ${label} configuration`)
+  const ids = new Set<string>()
+  for (const [index, item] of data.entries()) {
+    if (!valid(item)) throw new Error(`Invalid ${label} configuration: ${named(item) ? item.id : `item ${index + 1}`}`)
+    if (ids.has(item.id)) throw new Error(`Duplicate ${label} id: ${item.id}`)
+    ids.add(item.id)
+  }
   return data
 }
 function isStep(value: unknown): value is ProcessStep {
