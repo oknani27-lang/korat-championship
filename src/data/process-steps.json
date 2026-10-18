@@ -1,0 +1,11 @@
+[
+  {
+    "id": "preview",
+    "title": "Process overview",
+    "subtitle": "ภาพรวมกระบวนการ",
+    "description": "รอข้อมูลกระบวนการฉบับยืนยัน ตัวอย่างนี้ใช้เตรียมรูปแบบการแสดงผลและการควบคุมเท่านั้น",
+    "formulas": [], "outputs": [], "activeParts": [], "flowPaths": [],
+    "cameraFocus": null,
+    "timeline": { "start": 0, "end": 1 }
+  }
+]
