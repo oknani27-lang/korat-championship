@@ -144,6 +144,9 @@ async function routeModelFixture(page, gate) {
   });
   await test('Desktop/tablet/mobile layout, anchors, expanded results, keyboard menu', async (page, { errors, failures }) => {
     await ready(page);
+    assert.equal(await page.title(),'REGENA — DMR Process Explorer');
+    assert.equal(await page.locator('.brand').getAttribute('aria-label'),'REGENA หน้าหลัก');
+    assert.match(await page.locator('footer').innerText(),/REGENA · DMR System/);
     assert.equal(await page.locator('.viewer-heading,.hero-cta').count(),0);
     assert.equal(await page.getByText('Turn Waste Into New Value',{exact:true}).count(),0);
     assert.equal(await page.locator('.navbar').getByRole('button',{name:'Start Demo',exact:true}).count(),1);

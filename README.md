@@ -1,4 +1,4 @@
-# DEMETER ReFeed — Flow Prototype
+# REGENA — DMR Flow Prototype
 
 ## Current: complete 60-second presentation (19 October 2026)
 
