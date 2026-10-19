@@ -264,11 +264,26 @@
   .bottom-sheet{padding-bottom:max(0px,env(safe-area-inset-bottom))}
   footer{padding-bottom:max(25px,env(safe-area-inset-bottom))}
 }
+@media(max-width:1000px){
+  .process-controls .timeline input{height:40px;margin-block:0}
+}
 /* Put the active step and its controls directly after the model on stacked layouts. */
 @media(max-width:1000px){
   .stage-layout>.bottom-sheet{grid-column:1/-1;margin:0;width:auto;order:1}
   .stage-layout>#simulator{order:0}
   .stage-layout>.process-details{order:2}
+}
+@media(max-width:580px){
+  .stage-layout .simulator{height:290px;min-height:290px}
+  .simulator .canvas-wrap{bottom:124px}
+  .bottom-sheet.summary-sheet{display:grid;grid-template-columns:minmax(0,1fr);row-gap:0}
+  .summary-sheet .sheet-handle{grid-row:1}
+  .summary-sheet .sheet-top{grid-row:2}
+  .summary-sheet .sheet-content,.summary-sheet .sheet-columns{display:contents}
+  .summary-sheet .sheet-content>.sheet-columns{overflow:visible}
+  .summary-sheet .sheet-columns>article:first-child{grid-row:3}
+  .summary-sheet .process-controls{grid-row:4}
+  .summary-sheet .sheet-columns>.outputs{grid-row:5}
 }
 @media(min-width:760px) and (max-width:1000px) and (max-height:600px){
   .stage-layout>.process-details{order:1}
