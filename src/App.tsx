@@ -36,8 +36,8 @@ export default function App() {
         <ViewerBoundary><Suspense fallback={<div className="canvas-wrap canvas-fallback">กำลังเตรียมพื้นที่สามมิติ…</div>}><MachineViewer demoMode={simulator.state.demoMode} activeStep={simulator.step} seconds={simulator.state.playheadSeconds} flows={flowPaths} selectedPartId={simulator.state.selectedPartId} onSelectPart={simulator.selectPart}/></Suspense></ViewerBoundary>
       </section>
       <ProcessDetails simulator={simulator}/>
-      </div>
       <ProcessSheet simulator={simulator} showDetails={false}/>
+      </div>
       <section id="technology" className="below-section"><div><span className="section-label">BUILT FOR EXPLORATION</span><h2>พื้นที่สำหรับเข้าใจ<br/>ทุกส่วนของกระบวนการ.</h2></div><div><p>สำรวจโมเดลเครื่อง DMR พร้อมคำอธิบายและสูตรประกอบแต่ละขั้นตอน</p><span className="subtle-badge">นำเสนออัตโนมัติ 60 วินาที · ภาพประกอบครบ 60 วินาที · แปรรูปเป็นตัวอย่าง · ไม่ใช่เวลาบำบัดจริง</span></div></section>
       <ResearchSection/>
       <footer id="about"><a className="footer-brand" href="#overview"><Recycle size={21}/> REGENA · RGN System</a><p>Interactive 3D Process Simulator · Phase 1.1 Foundation</p><span>DESIGNED TO UNDERSTAND.</span></footer>

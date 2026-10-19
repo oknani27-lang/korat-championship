@@ -27,6 +27,7 @@ let browser;
       assert(!rects.overflow,`${width}: overflow`);
       assert(rects.bar.top>=rects.canvas.bottom,`${width}: toolbar overlaps canvas`);
       if(width>1000)assert(rects.sheet.bottom<=height,`${width}x${height} at ${seconds}s: sheet ends at ${rects.sheet.bottom}`);
+      if(width<=1000&&height>600){const mobileOrder=await page.evaluate(()=>({sheet:document.querySelector('#results').getBoundingClientRect().top,details:document.querySelector('.process-details').getBoundingClientRect().top}));assert(mobileOrder.sheet<mobileOrder.details,`${width}x${height}: process controls should be directly below the model before long details`)}
       if(seconds===19)await page.screenshot({path:`${output}/fit-${width}-${height}.png`,fullPage:true});
     }
     const touch=await page.evaluate(()=>({targets:[...document.querySelectorAll('.viewer-controls button,.process-controls button,.process-controls input')].map(el=>{const r=el.getBoundingClientRect();return {name:el.getAttribute('aria-label')||el.textContent?.trim(),width:r.width,height:r.height}}),orientation:screen.orientation?.type||'unknown'}));
