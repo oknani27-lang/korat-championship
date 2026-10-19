@@ -1,5 +1,6 @@
 import type { FlowPath, MachinePart, ProcessStep, Vec3 } from '../types/machine'
 import { validateTimeline } from '../simulation/timeline.ts'
+import { isSubstance } from './substances.ts'
 import type { ResearchPaper } from '../types/research'
 
 const record = (value: unknown): value is Record<string, unknown> => typeof value === 'object' && value !== null
@@ -16,6 +17,7 @@ function isStep(value: unknown): value is ProcessStep {
   return named(value) && typeof value.title === 'string' && typeof value.subtitle === 'string' && typeof value.description === 'string'
     && strings(value.outputs) && strings(value.activeParts) && strings(value.flowPaths)
     && (value.activeXrayParts === undefined || strings(value.activeXrayParts)) && (value.researchIds === undefined || strings(value.researchIds))
+    && (value.developmentStatus === undefined || value.developmentStatus === 'prototype' || value.developmentStatus === 'pending')
     && Array.isArray(value.formulas) && value.formulas.every(formula => Array.isArray(formula) && formula.every(token => record(token) && typeof token.text === 'string' && (token.kind === 'text' || token.kind === 'sub' || token.kind === 'sup')))
     && (value.cameraFocus === null || (record(value.cameraFocus) && vector(value.cameraFocus.position) && vector(value.cameraFocus.target)))
     && record(value.timeline) && typeof value.timeline.start === 'number' && typeof value.timeline.end === 'number'
@@ -36,7 +38,10 @@ export function parseParts(data: unknown): MachinePart[] {
 }
 export function parseFlows(data: unknown): FlowPath[] {
   const endpoint = (value: unknown) => value === undefined || (record(value) && typeof value.partId === 'string' && typeof value.connectionId === 'string')
-  return list(data, (value): value is FlowPath => named(value) && strings(value.partIds) && Array.isArray(value.points) && value.points.every(vector) && endpoint(value.from) && endpoint(value.to), 'flow paths')
+  return list(data, (value): value is FlowPath => named(value) && strings(value.partIds) && Array.isArray(value.points) && value.points.length >= 2 && value.points.every(vector) && endpoint(value.from) && endpoint(value.to)
+    && (value.medium === undefined || value.medium === 'liquid' || value.medium === 'gas')
+    && (value.evidence === undefined || (record(value.evidence) && strings(value.evidence.sourceObjects) && value.evidence.sourceObjects.length > 0 && typeof value.evidence.sourceSha256 === 'string' && /^[a-f0-9]{64}$/.test(value.evidence.sourceSha256) && typeof value.evidence.glbSha256 === 'string' && /^[a-f0-9]{64}$/.test(value.evidence.glbSha256) && value.evidence.status === 'geometry-checked' && typeof value.evidence.note === 'string'))
+    && (value.animation === undefined || (value.medium === 'liquid' && record(value.evidence) && record(value.animation) && typeof value.animation.startSeconds === 'number' && Number.isFinite(value.animation.startSeconds) && value.animation.startSeconds >= 0 && typeof value.animation.endSeconds === 'number' && Number.isFinite(value.animation.endSeconds) && value.animation.endSeconds > value.animation.startSeconds && value.animation.endSeconds <= 60 && strings(value.animation.substances) && value.animation.substances.length > 0 && value.animation.substances.every(isSubstance))), 'flow paths')
 }
 
 function sourceUrl(value: unknown, localPdf = false): value is string {
@@ -45,7 +50,8 @@ function sourceUrl(value: unknown, localPdf = false): value is string {
   try { return ['http:', 'https:'].includes(new URL(value).protocol) } catch { return false }
 }
 export function parseResearch(data: unknown): ResearchPaper[] {
-  return list(data, (value): value is ResearchPaper => named(value) && typeof value.title === 'string' && value.title.trim().length > 0 && strings(value.authors) && typeof value.year === 'number' && Number.isInteger(value.year) && value.year > 0 && typeof value.publication === 'string' && sourceUrl(value.sourceUrl) && (value.pdfUrl === undefined || sourceUrl(value.pdfUrl, true)) && (value.doi === undefined || (typeof value.doi === 'string' && /^10\.\d{4,9}\/\S+$/.test(value.doi))) && typeof value.summary === 'string' && strings(value.processIds) && value.processIds.length > 0 && strings(value.supports) && strings(value.limitations) && strings(value.unverifiedClaims), 'research')
+  const kinds = ['research', 'agency-resource', 'regulatory-guidance', 'technical-guide', 'manufacturer-document', 'conference-presentation', 'textbook']
+  return list(data, (value): value is ResearchPaper => named(value) && (value.kind === undefined || (typeof value.kind === 'string' && kinds.includes(value.kind))) && typeof value.title === 'string' && value.title.trim().length > 0 && strings(value.authors) && (value.year === null || (typeof value.year === 'number' && Number.isInteger(value.year) && value.year > 0)) && typeof value.publication === 'string' && sourceUrl(value.sourceUrl) && (value.pdfUrl === undefined || sourceUrl(value.pdfUrl, true)) && (value.doi === undefined || (typeof value.doi === 'string' && /^10\.\d{4,9}\/\S+$/.test(value.doi))) && typeof value.summary === 'string' && strings(value.processIds) && value.processIds.length > 0 && strings(value.supports) && strings(value.limitations) && strings(value.unverifiedClaims), 'research')
 }
 
 export function readData<T>(data: unknown, parse: (data: unknown) => T[], label: string): { items: T[]; error: string | null } {

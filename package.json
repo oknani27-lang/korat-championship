@@ -10,7 +10,10 @@
     "preview": "vite preview",
     "test": "node --experimental-strip-types src/simulation/timeline.test.ts",
     "typecheck": "tsc -b && tsc -p tsconfig.tests.json",
-    "test:browser": "node tests/browser-audit.cjs"
+    "test:browser": "node tests/browser-audit.cjs",
+    "test:animation": "node tests/animation-prototype.cjs",
+    "test:model": "node tests/model-integration.cjs",
+    "test:chemistry": "node tests/process-chemistry.cjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

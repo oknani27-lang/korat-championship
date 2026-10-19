@@ -1,11 +1,304 @@
 [
   {
-    "id": "preview",
-    "title": "Process overview",
-    "subtitle": "ภาพรวมกระบวนการ",
-    "description": "รอข้อมูลกระบวนการฉบับยืนยัน ตัวอย่างนี้ใช้เตรียมรูปแบบการแสดงผลและการควบคุมเท่านั้น",
-    "formulas": [], "outputs": [], "activeParts": [], "flowPaths": [],
+    "id": "overview",
+    "title": "ภาพรวมเครื่อง",
+    "subtitle": "ติดตามวัตถุดิบหนึ่งชุด",
+    "description": "ภาพประกอบครบ 60 วินาที แปรรูปและบรรจุเป็น schematic ตัวอย่าง ยังไม่ยืนยันวิธีจริง เวลาเป็นเวลาเล่าเรื่อง ไม่ใช่เวลาบำบัดจริง",
+    "formulas": [],
+    "outputs": [],
+    "activeParts": [],
+    "flowPaths": [],
     "cameraFocus": null,
-    "timeline": { "start": 0, "end": 1 }
+    "timeline": {
+      "start": 0,
+      "end": 0.05
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "intake",
+    "title": "รับวัตถุดิบ",
+    "subtitle": "T101 → P101 → EC101",
+    "description": "รับและส่งของเหลวจากถังพักผ่านปั๊มไปปรับสภาพ จุดสีซ้อนบนตำแหน่งท่อจริงเป็นสัญลักษณ์การไหล",
+    "formulas": [],
+    "outputs": [
+      "ของเหลวที่ส่งไปปรับสภาพ"
+    ],
+    "activeParts": [
+      "T101",
+      "P101"
+    ],
+    "flowPaths": [
+      "feed-to-pump",
+      "pump-to-cell"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.05,
+      "end": 0.1
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "conditioning",
+    "title": "ปรับสภาพ",
+    "subtitle": "EC101 · ภาพขยายเชิงสัญลักษณ์",
+    "description": "แสดงการปรับสภาพด้วยไฟฟ้าเคมีและการรวมกลุ่มตะกอนที่มีฟอสฟอรัส โดยไม่ระบุชนิดผลึก สมการ หรือประสิทธิภาพที่ยังไม่ยืนยัน ยูเรียไม่ได้ถูกเปลี่ยนเป็นฟอสฟอรัส",
+    "formulas": [],
+    "outputs": [
+      "สารละลายพร้อมตะกอนไป F101"
+    ],
+    "activeParts": [
+      "EC101"
+    ],
+    "flowPaths": [
+      "pump-to-cell",
+      "cell-to-filter"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.1,
+      "end": 0.18333333333333332
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "separation",
+    "title": "แยกของเหลวและตะกอน",
+    "subtitle": "F101 · แยกก่อนส่งต่อ R201",
+    "description": "แยกกลุ่มตะกอนออกจากของเหลว สารที่ละลายยังอยู่ในของเหลว ไม่เท่ากับน้ำบริสุทธิ์ ไม่ปล่อยอนุภาคเข้าแขนง R102 ที่ยังขัดข้อมูล",
+    "formulas": [],
+    "outputs": [
+      "ของเหลวที่ยังมีสารละลาย",
+      "ตะกอนกักแยก · ทางไป R102 ยังรอตรวจ"
+    ],
+    "activeParts": [
+      "F101"
+    ],
+    "flowPaths": [
+      "cell-to-filter"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.18333333333333332,
+      "end": 0.2833333333333333
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "nitrification",
+    "title": "ไนตริฟิเคชัน",
+    "subtitle": "R201 · ของเหลวบนท่อ / ภายในเป็น schematic",
+    "description": "แสดง NH₄⁺ → NO₂⁻ → NO₃⁻ จากส่วนแอมโมเนียมเชิงสัญลักษณ์ ไม่แสดงว่ายูเรียเปลี่ยนเป็นไนเตรตโดยตรง ก๊าซ G201 ใช้ schematic เนื่องจากจุดต่อไม่ครบ",
+    "formulas": [],
+    "outputs": [
+      "ส่วนไนโตรเจนที่แสดงเป็นไนเตรต · ไม่ใช่ผลตรวจจริง",
+      "ของเหลวส่ง T301 เพื่อกักตรวจ"
+    ],
+    "activeParts": [
+      "R201",
+      "G201"
+    ],
+    "flowPaths": [
+      "filter-to-bioreactor",
+      "bioreactor-to-hold"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.2833333333333333,
+      "end": 0.38333333333333336
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "hold",
+    "title": "กักตรวจ",
+    "subtitle": "T301 · กักก่อนส่งต่อ",
+    "description": "แสดงกักตรวจและตัวอย่างการอนุมัติหนึ่งล็อตก่อนเปิดส่ง T302 ไม่แสดงค่าตรวจหรือรับรองว่าทุกล็อตผ่าน",
+    "formulas": [],
+    "outputs": [
+      "ตัวอย่างล็อตที่อนุมัติไป T302",
+      "ล็อตไม่ผ่านยังต้องกักแยก"
+    ],
+    "activeParts": [
+      "T301"
+    ],
+    "flowPaths": [
+      "bioreactor-to-hold",
+      "hold-to-formulation"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.38333333333333336,
+      "end": 0.43333333333333335
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "formulation",
+    "title": "ปรับสูตร",
+    "subtitle": "T302 → P301 · การเติมเป็น schematic",
+    "description": "ผสม stock ที่อนุมัติ น้ำและสารเสริมใน schematic ไม่กำหนดสูตรหรือปริมาณ การปล่อยไป P301 เป็นตัวอย่างหลังตรวจสูตร",
+    "formulas": [],
+    "outputs": [
+      "ตัวอย่างอาหารที่อนุมัติส่งเข้าเพาะ"
+    ],
+    "activeParts": [
+      "T302",
+      "P301"
+    ],
+    "flowPaths": [
+      "hold-to-formulation",
+      "formulation-to-dosing"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.43333333333333335,
+      "end": 0.5
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "cultivation",
+    "title": "เพาะสาหร่าย",
+    "subtitle": "R401 · อาหารและวงจรหมุนเวียนแยกสาย",
+    "description": "เซลล์เกลียว แสงและก๊าซแสดงใน schematic แบบย่อเวลา สายอาหารกับวงจร P401/AIT401 ใช้ท่อจริง ไม่แสดงว่าการหมุนเวียนคือการเติมก๊าซ",
+    "formulas": [],
+    "outputs": [
+      "ชีวมวลเชิงสัญลักษณ์ · ไม่ใช่อัตราเติบโตหรือผลผลิตจริง"
+    ],
+    "activeParts": [
+      "R401",
+      "P301",
+      "P401",
+      "AIT401"
+    ],
+    "flowPaths": [
+      "dosing-to-culture",
+      "culture-to-circulation",
+      "circulation-to-sensor",
+      "sensor-to-culture"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.5,
+      "end": 0.6333333333333333
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "harvest",
+    "title": "เก็บเกี่ยว",
+    "subtitle": "R401 → F501 → T501 · แยกชีวมวลและ filtrate",
+    "description": "F501 แยกเชิงหน้าที่เป็นชีวมวลเข้มข้นและ filtrate ที่ยังมีสารละลาย ภายในเป็น schematic ไม่กำหนดชนิดตัวกรองหรือค่าการกักจริง",
+    "formulas": [],
+    "outputs": [
+      "ชีวมวลเปียกพักใน T501",
+      "filtrate กักก่อนติดตามไป W601 · ไม่ใช่น้ำบริสุทธิ์"
+    ],
+    "activeParts": [
+      "R401",
+      "F501",
+      "T501"
+    ],
+    "flowPaths": [
+      "culture-to-harvest",
+      "harvest-to-biomass"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.6333333333333333,
+      "end": 0.7333333333333333
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "recovery",
+    "title": "กู้คืนน้ำ",
+    "subtitle": "F501 → W601 → T601 · ยังไม่อนุมัติใช้ซ้ำ",
+    "description": "ติดตาม filtrate ตามท่อถึงขอบเขต W601 และของเหลว candidate ไป T601 เพื่อกักรอตรวจ ไม่เลือกกลไกบำบัด ไม่เปิดทางคืนถังเพาะ ชีวมวลยังพัก T501",
+    "formulas": [],
+    "outputs": [
+      "ของเหลว candidate ใน T601 · รอตรวจตามจุดใช้",
+      "ชีวมวลพัก T501 แยกจากสายกู้คืนน้ำ"
+    ],
+    "activeParts": [
+      "F501",
+      "W601",
+      "T601",
+      "T501"
+    ],
+    "flowPaths": [
+      "filtrate-to-recovery",
+      "candidate-to-water-hold"
+    ],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.7333333333333333,
+      "end": 0.8
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "washing",
+    "title": "ล้างชีวมวล",
+    "subtitle": "T501 · น้ำล้างเข้าและออกเป็น schematic",
+    "description": "ตัวอย่างน้ำที่ผ่านเกณฑ์ล้างชีวมวลและลดน้ำ น้ำล้างออกไปกักแยก ไม่รวมกับน้ำกู้คืนที่อนุมัติแล้ว ท่อรับน้ำล้างร่วมยังรอยืนยัน",
+    "formulas": [],
+    "outputs": [
+      "ชีวมวลเปียกพร้อมรอแปรรูป · ยังไม่ใช่อาหารพร้อมกิน",
+      "น้ำล้างกักแยก · ไม่ส่งกลับถังเพาะ"
+    ],
+    "activeParts": [
+      "T501"
+    ],
+    "flowPaths": [],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.8,
+      "end": 0.85
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "processing",
+    "title": "แปรรูป",
+    "subtitle": "ตัวอย่างทางเลือก: อบแห้ง · DR701",
+    "description": "โหลดชีวมวลเปียกเป็นชุดและลดน้ำใน schematic ของ DR701 เป็นตัวอย่างทางเลือก ไม่ใช่วิธีจริงที่ยืนยัน H701 / FD701 ไม่ทำงานอนุกรม",
+    "formulas": [],
+    "outputs": [
+      "ผลิตภัณฑ์จากขั้นตัวอย่าง · รอบรรจุ ไม่ใช่โปรตีนบริสุทธิ์"
+    ],
+    "activeParts": [
+      "DR701"
+    ],
+    "flowPaths": [],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.85,
+      "end": 0.9333333333333333
+    },
+    "developmentStatus": "prototype"
+  },
+  {
+    "id": "packing",
+    "title": "บรรจุและกักรอตรวจ",
+    "subtitle": "PK801 → T801 · batch transfer ตัวอย่าง",
+    "description": "เติมซอง ซีล ระบุล็อตตัวอย่าง และย้ายไป T801 ใน schematic ไม่แสดงว่าอนุมัติบริโภคแล้ว",
+    "formulas": [],
+    "outputs": [
+      "บรรจุแล้ว / กักรอตรวจ · ล็อตตัวอย่าง"
+    ],
+    "activeParts": [
+      "PK801",
+      "T801"
+    ],
+    "flowPaths": [],
+    "cameraFocus": null,
+    "timeline": {
+      "start": 0.9333333333333333,
+      "end": 1
+    },
+    "developmentStatus": "prototype"
   }
 ]

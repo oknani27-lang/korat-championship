@@ -1,0 +1,4010 @@
+{
+  "source": "C:\\Users\\Admin\\korat-championship\\new-chat\\DMR_Reference_Pipes_20261019_122113\\DMR_Reference_Pipes_R102_Fixed.blend",
+  "sourceSha256Before": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+  "sourceSha256After": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+  "sourceUnchanged": true,
+  "export": "public/models/dmr-machine.glb",
+  "glbBytes": 2095168,
+  "visibleSourceObjects": 646,
+  "exportedSourceObjects": 646,
+  "excludedHiddenObjects": [
+    "QUALIFIED_WATER_SUPPLY_BOUNDARY",
+    "G201_OXYGEN_SERVICE_BOUNDARY",
+    "EC101_Inlet",
+    "EC101_Inlet_Drop",
+    "EC101_T101_Connection",
+    "EC101_Outlet",
+    "EC101_Outlet_End",
+    "Return_Header.003",
+    "Return_Header.004",
+    "Return_Header.005",
+    "Return_Header.006",
+    "Return_Header.007",
+    "F101_Inlet_Link",
+    "F101_Outlet",
+    "F101_Outlet_Riser",
+    "F101_Outlet_End",
+    "F101_to_R102_Side_Downpipe",
+    "F101_Downpipe_Port_Collar",
+    "F101_Downpipe_Union",
+    "R102_Inlet_Coupling",
+    "F101_R201",
+    "F101_R201.001",
+    "F101_R201.002",
+    "R201_T301",
+    "R201_T301.001",
+    "R201_T301.002",
+    "T301_T302",
+    "T301_T302.001",
+    "T301_T302.002",
+    "T302_R401",
+    "T302_R401.001",
+    "T302_R401.002",
+    "Green_Header",
+    "Green_Header.001",
+    "Green_Header.002",
+    "F501_T501",
+    "F501_T501.001",
+    "F501_T501.002",
+    "T501_T601",
+    "T501_T601.001",
+    "T501_T601.002",
+    "Return_Header",
+    "Return_Header.001",
+    "Return_Header.002",
+    "Overhead_Utility_Header",
+    "Overhead_Utility_Header.001",
+    "Overhead_Utility_Header.002",
+    "Blue_Drop",
+    "Blue_Drop.001",
+    "Blue_Drop.002",
+    "Blue_Drop.003",
+    "Blue_Drop.004",
+    "Blue_Drop.005",
+    "Blue_Drop.006",
+    "Blue_Drop.007",
+    "Blue_Drop.008",
+    "T302_R401.003",
+    "EC101_Outlet_Riser.001",
+    "EC101_Outlet.001",
+    "EC101_Outlet_Riser.002",
+    "EC101_Outlet_Riser.003",
+    "F101_UNUSED_DRAIN_BLIND_CAP"
+  ],
+  "missingExportNodes": [],
+  "curveCount": 44,
+  "triangles": 33108,
+  "materials": 24,
+  "images": 5,
+  "blenderTranslation": [
+    -7.375,
+    -0.05049574375152588,
+    0.5524999499320984
+  ],
+  "axisTransform": "web = [x, z, -y] after translation; no scale change",
+  "sourceBounds": {
+    "min": [
+      -0.7899999618530273,
+      -1.125,
+      -0.5524999499320984
+    ],
+    "max": [
+      15.539999961853027,
+      1.2259914875030518,
+      4.284999847412109
+    ]
+  },
+  "assemblyMemberCounts": {
+    "T101": 25,
+    "EC101": 69,
+    "F101": 35,
+    "R102": 13,
+    "R201": 22,
+    "G201": 6,
+    "T301": 18,
+    "T302": 13,
+    "R401": 50,
+    "G401": 8,
+    "P401": 5,
+    "AIT401": 4,
+    "F501": 15,
+    "T501": 19,
+    "W601": 14,
+    "T601": 16,
+    "H701": 24,
+    "DR701": 20,
+    "FD701": 24,
+    "PK801": 27,
+    "T801": 9,
+    "PLC901": 18,
+    "P101": 1,
+    "P301": 1,
+    "PIPEWORK": 138,
+    "STRUCTURE": 52
+  },
+  "nodes": [
+    {
+      "sourceName": "T101_Tank_Body_12_Sides",
+      "exportName": "T101_Tank_Body_12_Sides",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Retaining_Band",
+      "exportName": "T101_Retaining_Band",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Retaining_Band.001",
+      "exportName": "T101_Retaining_Band.001",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Top_Hatch",
+      "exportName": "T101_Top_Hatch",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Vent",
+      "exportName": "T101_Vent",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Support_Leg",
+      "exportName": "T101_Support_Leg",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Foot",
+      "exportName": "T101_Foot",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Support_Leg.001",
+      "exportName": "T101_Support_Leg.001",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Foot.001",
+      "exportName": "T101_Foot.001",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Support_Leg.002",
+      "exportName": "T101_Support_Leg.002",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Foot.002",
+      "exportName": "T101_Foot.002",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Support_Leg.003",
+      "exportName": "T101_Support_Leg.003",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Foot.003",
+      "exportName": "T101_Foot.003",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Lower_Frame",
+      "exportName": "T101_Lower_Frame",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Lower_Frame.001",
+      "exportName": "T101_Lower_Frame.001",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Lower_Crossbar",
+      "exportName": "T101_Lower_Crossbar",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Lower_Crossbar.001",
+      "exportName": "T101_Lower_Crossbar.001",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Drain_Elbow",
+      "exportName": "T101_Drain_Elbow",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Valve_Body",
+      "exportName": "T101_Valve_Body",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Valve_Handle",
+      "exportName": "T101_Valve_Handle",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Side_Outlet",
+      "exportName": "T101_Side_Outlet",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Outlet_Down",
+      "exportName": "T101_Outlet_Down",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Outlet_End",
+      "exportName": "T101_Outlet_End",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Label_Plate",
+      "exportName": "T101_Label_Plate",
+      "assembly": "WEB_T101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T101_Equipment_Label",
+      "exportName": "T101_Equipment_Label",
+      "assembly": "WEB_T101",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "EC101_Frame_Leg",
+      "exportName": "EC101_Frame_Leg",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Foot",
+      "exportName": "EC101_Foot",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Leg.001",
+      "exportName": "EC101_Frame_Leg.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Foot.001",
+      "exportName": "EC101_Foot.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Leg.002",
+      "exportName": "EC101_Frame_Leg.002",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Foot.002",
+      "exportName": "EC101_Foot.002",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Leg.003",
+      "exportName": "EC101_Frame_Leg.003",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Foot.003",
+      "exportName": "EC101_Foot.003",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Rail",
+      "exportName": "EC101_Frame_Rail",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Rail.001",
+      "exportName": "EC101_Frame_Rail.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Crossrail",
+      "exportName": "EC101_Frame_Crossrail",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Crossrail.001",
+      "exportName": "EC101_Frame_Crossrail.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Rail.002",
+      "exportName": "EC101_Frame_Rail.002",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Rail.003",
+      "exportName": "EC101_Frame_Rail.003",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Crossrail.002",
+      "exportName": "EC101_Frame_Crossrail.002",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Frame_Crossrail.003",
+      "exportName": "EC101_Frame_Crossrail.003",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Header",
+      "exportName": "EC101_Header",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Header_Edge",
+      "exportName": "EC101_Header_Edge",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Header.001",
+      "exportName": "EC101_Header.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Header_Edge.001",
+      "exportName": "EC101_Header_Edge.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Vertical_Tube_01",
+      "exportName": "EC101_Vertical_Tube_01",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling",
+      "exportName": "EC101_Tube_Coupling",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.001",
+      "exportName": "EC101_Tube_Coupling.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Vertical_Tube_02",
+      "exportName": "EC101_Vertical_Tube_02",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.002",
+      "exportName": "EC101_Tube_Coupling.002",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.003",
+      "exportName": "EC101_Tube_Coupling.003",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Vertical_Tube_03",
+      "exportName": "EC101_Vertical_Tube_03",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.004",
+      "exportName": "EC101_Tube_Coupling.004",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.005",
+      "exportName": "EC101_Tube_Coupling.005",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Vertical_Tube_04",
+      "exportName": "EC101_Vertical_Tube_04",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.006",
+      "exportName": "EC101_Tube_Coupling.006",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.007",
+      "exportName": "EC101_Tube_Coupling.007",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Vertical_Tube_05",
+      "exportName": "EC101_Vertical_Tube_05",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.008",
+      "exportName": "EC101_Tube_Coupling.008",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.009",
+      "exportName": "EC101_Tube_Coupling.009",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Vertical_Tube_06",
+      "exportName": "EC101_Vertical_Tube_06",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.010",
+      "exportName": "EC101_Tube_Coupling.010",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.011",
+      "exportName": "EC101_Tube_Coupling.011",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Vertical_Tube_07",
+      "exportName": "EC101_Vertical_Tube_07",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.012",
+      "exportName": "EC101_Tube_Coupling.012",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.013",
+      "exportName": "EC101_Tube_Coupling.013",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Vertical_Tube_08",
+      "exportName": "EC101_Vertical_Tube_08",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.014",
+      "exportName": "EC101_Tube_Coupling.014",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tube_Coupling.015",
+      "exportName": "EC101_Tube_Coupling.015",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tie_Rod",
+      "exportName": "EC101_Tie_Rod",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Hex_Nut",
+      "exportName": "EC101_Hex_Nut",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Hex_Nut.001",
+      "exportName": "EC101_Hex_Nut.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tie_Rod.001",
+      "exportName": "EC101_Tie_Rod.001",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Hex_Nut.002",
+      "exportName": "EC101_Hex_Nut.002",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Hex_Nut.003",
+      "exportName": "EC101_Hex_Nut.003",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tie_Rod.002",
+      "exportName": "EC101_Tie_Rod.002",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Hex_Nut.004",
+      "exportName": "EC101_Hex_Nut.004",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Hex_Nut.005",
+      "exportName": "EC101_Hex_Nut.005",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Tie_Rod.003",
+      "exportName": "EC101_Tie_Rod.003",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Hex_Nut.006",
+      "exportName": "EC101_Hex_Nut.006",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Hex_Nut.007",
+      "exportName": "EC101_Hex_Nut.007",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Label_Post",
+      "exportName": "EC101_Label_Post",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Label_Plate",
+      "exportName": "EC101_Label_Plate",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Equipment_Label",
+      "exportName": "EC101_Equipment_Label",
+      "assembly": "WEB_EC101",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "R102_Actual_Neck_Union_Concept",
+      "exportName": "R102_Actual_Neck_Union_Concept",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Filter_Housing_12_Sides",
+      "exportName": "F101_Filter_Housing_12_Sides",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange",
+      "exportName": "F101_Flange",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Face",
+      "exportName": "F101_Flange_Face",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt",
+      "exportName": "F101_Flange_Bolt",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.001",
+      "exportName": "F101_Flange_Bolt.001",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.002",
+      "exportName": "F101_Flange_Bolt.002",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.003",
+      "exportName": "F101_Flange_Bolt.003",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.004",
+      "exportName": "F101_Flange_Bolt.004",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.005",
+      "exportName": "F101_Flange_Bolt.005",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange.001",
+      "exportName": "F101_Flange.001",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Face.001",
+      "exportName": "F101_Flange_Face.001",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.006",
+      "exportName": "F101_Flange_Bolt.006",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.007",
+      "exportName": "F101_Flange_Bolt.007",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.008",
+      "exportName": "F101_Flange_Bolt.008",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.009",
+      "exportName": "F101_Flange_Bolt.009",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.010",
+      "exportName": "F101_Flange_Bolt.010",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Flange_Bolt.011",
+      "exportName": "F101_Flange_Bolt.011",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Top_Cap",
+      "exportName": "F101_Top_Cap",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Bottom_Cap",
+      "exportName": "F101_Bottom_Cap",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Long_Tie_Rod",
+      "exportName": "F101_Long_Tie_Rod",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Long_Tie_Rod.001",
+      "exportName": "F101_Long_Tie_Rod.001",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Lifting_Eye_Side",
+      "exportName": "F101_Lifting_Eye_Side",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Lifting_Eye_Side.001",
+      "exportName": "F101_Lifting_Eye_Side.001",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Lifting_Eye_Top",
+      "exportName": "F101_Lifting_Eye_Top",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Lifting_Eye_Side.002",
+      "exportName": "F101_Lifting_Eye_Side.002",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Lifting_Eye_Side.003",
+      "exportName": "F101_Lifting_Eye_Side.003",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Lifting_Eye_Top.001",
+      "exportName": "F101_Lifting_Eye_Top.001",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Drain_Stem",
+      "exportName": "F101_Drain_Stem",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Drain_Valve",
+      "exportName": "F101_Drain_Valve",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Drain_Handle",
+      "exportName": "F101_Drain_Handle",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Rear_Mount",
+      "exportName": "F101_Rear_Mount",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Rear_Mount.001",
+      "exportName": "F101_Rear_Mount.001",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Label_Post",
+      "exportName": "F101_Label_Post",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Label_Plate",
+      "exportName": "F101_Label_Plate",
+      "assembly": "WEB_F101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_Equipment_Label",
+      "exportName": "F101_Equipment_Label",
+      "assembly": "WEB_F101",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "phosphase",
+      "exportName": "phosphase",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_Flange",
+      "exportName": "R102_Flange",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_Cap",
+      "exportName": "R102_Cap",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_Flange.001",
+      "exportName": "R102_Flange.001",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_Cap.001",
+      "exportName": "R102_Cap.001",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_Neck",
+      "exportName": "R102_Neck",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_Sign",
+      "exportName": "R102_Sign",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_Label",
+      "exportName": "R102_Label",
+      "assembly": "WEB_R102",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "R201_Body",
+      "exportName": "R201_Body",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Flange",
+      "exportName": "R201_Flange",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Cap",
+      "exportName": "R201_Cap",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Flange.001",
+      "exportName": "R201_Flange.001",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Cap.001",
+      "exportName": "R201_Cap.001",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Neck",
+      "exportName": "R201_Neck",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Leg",
+      "exportName": "R201_Leg",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Leg.001",
+      "exportName": "R201_Leg.001",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Leg.002",
+      "exportName": "R201_Leg.002",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Leg.003",
+      "exportName": "R201_Leg.003",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Sign",
+      "exportName": "R201_Sign",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Label",
+      "exportName": "R201_Label",
+      "assembly": "WEB_R201",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "R201_Pellet_Window",
+      "exportName": "R201_Pellet_Window",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Body",
+      "exportName": "T301_Body",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Flange",
+      "exportName": "T301_Flange",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Cap",
+      "exportName": "T301_Cap",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Flange.001",
+      "exportName": "T301_Flange.001",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Cap.001",
+      "exportName": "T301_Cap.001",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Neck",
+      "exportName": "T301_Neck",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Leg",
+      "exportName": "T301_Leg",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Leg.001",
+      "exportName": "T301_Leg.001",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Leg.002",
+      "exportName": "T301_Leg.002",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Leg.003",
+      "exportName": "T301_Leg.003",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Sign",
+      "exportName": "T301_Sign",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Label",
+      "exportName": "T301_Label",
+      "assembly": "WEB_T301",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "T301_Motor",
+      "exportName": "T301_Motor",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Body",
+      "exportName": "T302_Body",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Flange",
+      "exportName": "T302_Flange",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Cap",
+      "exportName": "T302_Cap",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Flange.001",
+      "exportName": "T302_Flange.001",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Cap.001",
+      "exportName": "T302_Cap.001",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Neck",
+      "exportName": "T302_Neck",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Leg",
+      "exportName": "T302_Leg",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Leg.001",
+      "exportName": "T302_Leg.001",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Leg.002",
+      "exportName": "T302_Leg.002",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Leg.003",
+      "exportName": "T302_Leg.003",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Sign",
+      "exportName": "T302_Sign",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T302_Label",
+      "exportName": "T302_Label",
+      "assembly": "WEB_T302",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "T302_Motor",
+      "exportName": "T302_Motor",
+      "assembly": "WEB_T302",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Body",
+      "exportName": "R401_Body",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Flange",
+      "exportName": "R401_Flange",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cap",
+      "exportName": "R401_Cap",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Flange.001",
+      "exportName": "R401_Flange.001",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cap.001",
+      "exportName": "R401_Cap.001",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Neck",
+      "exportName": "R401_Neck",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Leg",
+      "exportName": "R401_Leg",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Leg.001",
+      "exportName": "R401_Leg.001",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Leg.002",
+      "exportName": "R401_Leg.002",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Leg.003",
+      "exportName": "R401_Leg.003",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Sign",
+      "exportName": "R401_Sign",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Label",
+      "exportName": "R401_Label",
+      "assembly": "WEB_R401",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "R401_Cage",
+      "exportName": "R401_Cage",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.001",
+      "exportName": "R401_Cage.001",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.002",
+      "exportName": "R401_Cage.002",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.003",
+      "exportName": "R401_Cage.003",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.004",
+      "exportName": "R401_Cage.004",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.005",
+      "exportName": "R401_Cage.005",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.006",
+      "exportName": "R401_Cage.006",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.007",
+      "exportName": "R401_Cage.007",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.008",
+      "exportName": "R401_Cage.008",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Cage.009",
+      "exportName": "R401_Cage.009",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Ring",
+      "exportName": "R401_Ring",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Ring.001",
+      "exportName": "R401_Ring.001",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Ring.002",
+      "exportName": "R401_Ring.002",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Ring.003",
+      "exportName": "R401_Ring.003",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Motor",
+      "exportName": "R401_Motor",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G401_Body",
+      "exportName": "G401_Body",
+      "assembly": "WEB_G401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G401_Flange",
+      "exportName": "G401_Flange",
+      "assembly": "WEB_G401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G401_Cap",
+      "exportName": "G401_Cap",
+      "assembly": "WEB_G401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G401_Flange.001",
+      "exportName": "G401_Flange.001",
+      "assembly": "WEB_G401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G401_Cap.001",
+      "exportName": "G401_Cap.001",
+      "assembly": "WEB_G401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G401_Neck",
+      "exportName": "G401_Neck",
+      "assembly": "WEB_G401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G401_Sign",
+      "exportName": "G401_Sign",
+      "assembly": "WEB_G401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G401_Label",
+      "exportName": "G401_Label",
+      "assembly": "WEB_G401",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "F501_Body",
+      "exportName": "F501_Body",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Flange",
+      "exportName": "F501_Flange",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Cap",
+      "exportName": "F501_Cap",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Flange.001",
+      "exportName": "F501_Flange.001",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Cap.001",
+      "exportName": "F501_Cap.001",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Neck",
+      "exportName": "F501_Neck",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Sign",
+      "exportName": "F501_Sign",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Label",
+      "exportName": "F501_Label",
+      "assembly": "WEB_F501",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "T501_Body",
+      "exportName": "T501_Body",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Flange",
+      "exportName": "T501_Flange",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Cap",
+      "exportName": "T501_Cap",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Flange.001",
+      "exportName": "T501_Flange.001",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Cap.001",
+      "exportName": "T501_Cap.001",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Neck",
+      "exportName": "T501_Neck",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Leg",
+      "exportName": "T501_Leg",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Leg.001",
+      "exportName": "T501_Leg.001",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Leg.002",
+      "exportName": "T501_Leg.002",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Leg.003",
+      "exportName": "T501_Leg.003",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Sign",
+      "exportName": "T501_Sign",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Label",
+      "exportName": "T501_Label",
+      "assembly": "WEB_T501",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "T501_Contents",
+      "exportName": "T501_Contents",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Body",
+      "exportName": "T601_Body",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Flange",
+      "exportName": "T601_Flange",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Cap",
+      "exportName": "T601_Cap",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Flange.001",
+      "exportName": "T601_Flange.001",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Cap.001",
+      "exportName": "T601_Cap.001",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Neck",
+      "exportName": "T601_Neck",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Sign",
+      "exportName": "T601_Sign",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Label",
+      "exportName": "T601_Label",
+      "assembly": "WEB_T601",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "P401_Base",
+      "exportName": "P401_Base",
+      "assembly": "WEB_P401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "P401_Pump",
+      "exportName": "P401_Pump",
+      "assembly": "WEB_P401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "P401_Face",
+      "exportName": "P401_Face",
+      "assembly": "WEB_P401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "P401_Sign",
+      "exportName": "P401_Sign",
+      "assembly": "WEB_P401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "P401_Label",
+      "exportName": "P401_Label",
+      "assembly": "WEB_P401",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "AIT401_Instrument",
+      "exportName": "AIT401_Instrument",
+      "assembly": "WEB_AIT401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "AIT401_Sign",
+      "exportName": "AIT401_Sign",
+      "assembly": "WEB_AIT401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "AIT401_Label",
+      "exportName": "AIT401_Label",
+      "assembly": "WEB_AIT401",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "W601_Pending",
+      "exportName": "W601_Pending",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "W601_Sign",
+      "exportName": "W601_Sign",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "W601_Label",
+      "exportName": "W601_Label",
+      "assembly": "WEB_W601",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "H701_Cabinet",
+      "exportName": "H701_Cabinet",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Control",
+      "exportName": "H701_Control",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Sign",
+      "exportName": "H701_Sign",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Label",
+      "exportName": "H701_Label",
+      "assembly": "WEB_H701",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "H701_Door",
+      "exportName": "H701_Door",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Window",
+      "exportName": "H701_Window",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Rack",
+      "exportName": "H701_Rack",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Rack.001",
+      "exportName": "H701_Rack.001",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Rack.002",
+      "exportName": "H701_Rack.002",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Rack.003",
+      "exportName": "H701_Rack.003",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Handle",
+      "exportName": "H701_Handle",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Cabinet",
+      "exportName": "DR701_Cabinet",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Control",
+      "exportName": "DR701_Control",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Sign",
+      "exportName": "DR701_Sign",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Label",
+      "exportName": "DR701_Label",
+      "assembly": "WEB_DR701",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "DR701_Door",
+      "exportName": "DR701_Door",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Window",
+      "exportName": "DR701_Window",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Handle",
+      "exportName": "DR701_Handle",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Cabinet",
+      "exportName": "FD701_Cabinet",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Control",
+      "exportName": "FD701_Control",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Sign",
+      "exportName": "FD701_Sign",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Label",
+      "exportName": "FD701_Label",
+      "assembly": "WEB_FD701",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "FD701_Door",
+      "exportName": "FD701_Door",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Window",
+      "exportName": "FD701_Window",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Rack",
+      "exportName": "FD701_Rack",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Rack.001",
+      "exportName": "FD701_Rack.001",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Rack.002",
+      "exportName": "FD701_Rack.002",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Rack.003",
+      "exportName": "FD701_Rack.003",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Handle",
+      "exportName": "FD701_Handle",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PK801_Machine",
+      "exportName": "PK801_Machine",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PK801_Window",
+      "exportName": "PK801_Window",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PK801_Sign",
+      "exportName": "PK801_Sign",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PK801_Label",
+      "exportName": "PK801_Label",
+      "assembly": "WEB_PK801",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "PK801_Conveyor",
+      "exportName": "PK801_Conveyor",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PK801_Belt",
+      "exportName": "PK801_Belt",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PK801_Package",
+      "exportName": "PK801_Package",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T801_Machine",
+      "exportName": "T801_Machine",
+      "assembly": "WEB_T801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T801_Window",
+      "exportName": "T801_Window",
+      "assembly": "WEB_T801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T801_Sign",
+      "exportName": "T801_Sign",
+      "assembly": "WEB_T801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T801_Label",
+      "exportName": "T801_Label",
+      "assembly": "WEB_T801",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "PLC901_Cabinet",
+      "exportName": "PLC901_Cabinet",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Door",
+      "exportName": "PLC901_Door",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Screen",
+      "exportName": "PLC901_Screen",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Vent",
+      "exportName": "PLC901_Vent",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Vent.001",
+      "exportName": "PLC901_Vent.001",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Vent.002",
+      "exportName": "PLC901_Vent.002",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Vent.003",
+      "exportName": "PLC901_Vent.003",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Vent.004",
+      "exportName": "PLC901_Vent.004",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Sign",
+      "exportName": "PLC901_Sign",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Label",
+      "exportName": "PLC901_Label",
+      "assembly": "WEB_PLC901",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "PLC901_Beacon",
+      "exportName": "PLC901_Beacon",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Beacon_Light",
+      "exportName": "Beacon_Light",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Beacon_Light.001",
+      "exportName": "Beacon_Light.001",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Beacon_Light.002",
+      "exportName": "Beacon_Light.002",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Deck",
+      "exportName": "Skid_Deck",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Long_Beam",
+      "exportName": "Skid_Long_Beam",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Long_Beam.001",
+      "exportName": "Skid_Long_Beam.001",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Cross_Beam",
+      "exportName": "Skid_Cross_Beam",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot",
+      "exportName": "Skid_Adjustable_Foot",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad",
+      "exportName": "Skid_Foot_Pad",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.001",
+      "exportName": "Skid_Adjustable_Foot.001",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.001",
+      "exportName": "Skid_Foot_Pad.001",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Cross_Beam.001",
+      "exportName": "Skid_Cross_Beam.001",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.002",
+      "exportName": "Skid_Adjustable_Foot.002",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.002",
+      "exportName": "Skid_Foot_Pad.002",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.003",
+      "exportName": "Skid_Adjustable_Foot.003",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.003",
+      "exportName": "Skid_Foot_Pad.003",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Cross_Beam.002",
+      "exportName": "Skid_Cross_Beam.002",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.004",
+      "exportName": "Skid_Adjustable_Foot.004",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.004",
+      "exportName": "Skid_Foot_Pad.004",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.005",
+      "exportName": "Skid_Adjustable_Foot.005",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.005",
+      "exportName": "Skid_Foot_Pad.005",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Cross_Beam.003",
+      "exportName": "Skid_Cross_Beam.003",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.006",
+      "exportName": "Skid_Adjustable_Foot.006",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.006",
+      "exportName": "Skid_Foot_Pad.006",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.007",
+      "exportName": "Skid_Adjustable_Foot.007",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.007",
+      "exportName": "Skid_Foot_Pad.007",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Cross_Beam.004",
+      "exportName": "Skid_Cross_Beam.004",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.008",
+      "exportName": "Skid_Adjustable_Foot.008",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.008",
+      "exportName": "Skid_Foot_Pad.008",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.009",
+      "exportName": "Skid_Adjustable_Foot.009",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.009",
+      "exportName": "Skid_Foot_Pad.009",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Cross_Beam.005",
+      "exportName": "Skid_Cross_Beam.005",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.010",
+      "exportName": "Skid_Adjustable_Foot.010",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.010",
+      "exportName": "Skid_Foot_Pad.010",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.011",
+      "exportName": "Skid_Adjustable_Foot.011",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.011",
+      "exportName": "Skid_Foot_Pad.011",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Cross_Beam.006",
+      "exportName": "Skid_Cross_Beam.006",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.012",
+      "exportName": "Skid_Adjustable_Foot.012",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.012",
+      "exportName": "Skid_Foot_Pad.012",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.013",
+      "exportName": "Skid_Adjustable_Foot.013",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.013",
+      "exportName": "Skid_Foot_Pad.013",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Cross_Beam.007",
+      "exportName": "Skid_Cross_Beam.007",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.014",
+      "exportName": "Skid_Adjustable_Foot.014",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.014",
+      "exportName": "Skid_Foot_Pad.014",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Adjustable_Foot.015",
+      "exportName": "Skid_Adjustable_Foot.015",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Skid_Foot_Pad.015",
+      "exportName": "Skid_Foot_Pad.015",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Rear_Frame_Post",
+      "exportName": "Rear_Frame_Post",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Rear_Frame_Post.001",
+      "exportName": "Rear_Frame_Post.001",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Rear_Frame_Post.002",
+      "exportName": "Rear_Frame_Post.002",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Rear_Frame_Post.003",
+      "exportName": "Rear_Frame_Post.003",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Rear_Frame_Post.004",
+      "exportName": "Rear_Frame_Post.004",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Rear_Frame_Post.005",
+      "exportName": "Rear_Frame_Post.005",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Rear_Frame_Post.006",
+      "exportName": "Rear_Frame_Post.006",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Rear_Frame_Post.007",
+      "exportName": "Rear_Frame_Post.007",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Overhead_Frame_Beam",
+      "exportName": "Overhead_Frame_Beam",
+      "assembly": "WEB_STRUCTURE",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G201_Sign",
+      "exportName": "G201_Sign",
+      "assembly": "WEB_G201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G201_Label",
+      "exportName": "G201_Label",
+      "assembly": "WEB_G201",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "P101_Feed_Pump_Concept",
+      "exportName": "P101_Feed_Pump_Concept",
+      "assembly": "WEB_P101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "P301_Dosing_Pump_Concept",
+      "exportName": "P301_Dosing_Pump_Concept",
+      "assembly": "WEB_P301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_T101_P101",
+      "exportName": "WF2_T101_P101",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_P101_EC101",
+      "exportName": "WF2_P101_EC101",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_EC101_F101",
+      "exportName": "WF2_EC101_F101",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_F101_R201",
+      "exportName": "WF2_F101_R201",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_R201_T301",
+      "exportName": "WF2_R201_T301",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_T301_T302",
+      "exportName": "WF2_T301_T302",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "T301_Release_NC",
+      "exportName": "T301_Release_NC",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Release_NC_Handle",
+      "exportName": "T301_Release_NC_Handle",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_T302_P301",
+      "exportName": "WF2_T302_P301",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_P301_R401",
+      "exportName": "WF2_P301_R401",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_R401_P401",
+      "exportName": "WF2_R401_P401",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_P401_SENSOR",
+      "exportName": "WF2_P401_SENSOR",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_SENSOR_R401",
+      "exportName": "WF2_SENSOR_R401",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "AIT401_Wetted_Interface",
+      "exportName": "AIT401_Wetted_Interface",
+      "assembly": "WEB_AIT401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_R401_F501",
+      "exportName": "WF2_R401_F501",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_F501_T501",
+      "exportName": "WF2_F501_T501",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_F501_W601",
+      "exportName": "WF2_F501_W601",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_T501_W601",
+      "exportName": "WF2_T501_W601",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "Filtrate_In_NC",
+      "exportName": "Filtrate_In_NC",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Filtrate_In_NC_Handle",
+      "exportName": "Filtrate_In_NC_Handle",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Wash_Effluent_In_NC",
+      "exportName": "Wash_Effluent_In_NC",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Wash_Effluent_In_NC_Handle",
+      "exportName": "Wash_Effluent_In_NC_Handle",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_W601_T601",
+      "exportName": "WF2_W601_T601",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_T601_R401_RETURN",
+      "exportName": "WF2_T601_R401_RETURN",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "Water_Return_NC",
+      "exportName": "Water_Return_NC",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Water_Return_NC_Handle",
+      "exportName": "Water_Return_NC_Handle",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_WATER_T302",
+      "exportName": "WF2_WATER_T302",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_WATER_T501",
+      "exportName": "WF2_WATER_T501",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "Wash_Water_NC",
+      "exportName": "Wash_Water_NC",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "Wash_Water_NC_Handle",
+      "exportName": "Wash_Water_NC_Handle",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_G201_R201",
+      "exportName": "WF2_G201_R201",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "WF2_F101_R102_OPTION",
+      "exportName": "WF2_F101_R102_OPTION",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "R102_Optional_NC",
+      "exportName": "R102_Optional_NC",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_Optional_NC_Handle",
+      "exportName": "R102_Optional_NC_Handle",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_REJECT_HOLD_BOUNDARY",
+      "exportName": "T301_REJECT_HOLD_BOUNDARY",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_T301_REJECT",
+      "exportName": "WF2_T301_REJECT",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "T301_Reject_NC",
+      "exportName": "T301_Reject_NC",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T301_Reject_NC_Handle",
+      "exportName": "T301_Reject_NC_Handle",
+      "assembly": "WEB_T301",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "W601_REJECT_HOLD_BOUNDARY",
+      "exportName": "W601_REJECT_HOLD_BOUNDARY",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_W601_REJECT",
+      "exportName": "WF2_W601_REJECT",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "W601_Reject_NC",
+      "exportName": "W601_Reject_NC",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "W601_Reject_NC_Handle",
+      "exportName": "W601_Reject_NC_Handle",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_REJECT_HOLD_BOUNDARY",
+      "exportName": "T601_REJECT_HOLD_BOUNDARY",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "WF2_T601_REJECT",
+      "exportName": "WF2_T601_REJECT",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "T601_Reject_NC",
+      "exportName": "T601_Reject_NC",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Reject_NC_Handle",
+      "exportName": "T601_Reject_NC_Handle",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_HEADER_AIR",
+      "exportName": "REF_HEADER_AIR",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_AIR_TERMINATION_-0.6",
+      "exportName": "REF_AIR_TERMINATION_-0.6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_TERMINATION_15.35",
+      "exportName": "REF_AIR_TERMINATION_15.35",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Clamp_0",
+      "exportName": "REF_AIR_Clamp_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Support_0",
+      "exportName": "REF_AIR_Support_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Clamp_2",
+      "exportName": "REF_AIR_Clamp_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Support_2",
+      "exportName": "REF_AIR_Support_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Clamp_4",
+      "exportName": "REF_AIR_Clamp_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Support_4",
+      "exportName": "REF_AIR_Support_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Clamp_6",
+      "exportName": "REF_AIR_Clamp_6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Support_6",
+      "exportName": "REF_AIR_Support_6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Clamp_8",
+      "exportName": "REF_AIR_Clamp_8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Support_8",
+      "exportName": "REF_AIR_Support_8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Clamp_10",
+      "exportName": "REF_AIR_Clamp_10",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Support_10",
+      "exportName": "REF_AIR_Support_10",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Clamp_12",
+      "exportName": "REF_AIR_Clamp_12",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Support_12",
+      "exportName": "REF_AIR_Support_12",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Clamp_14",
+      "exportName": "REF_AIR_Clamp_14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_Support_14",
+      "exportName": "REF_AIR_Support_14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_HEADER_CARBON_GAS",
+      "exportName": "REF_HEADER_CARBON_GAS",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_TERMINATION_-0.6",
+      "exportName": "REF_CARBON_GAS_TERMINATION_-0.6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_TERMINATION_15.35",
+      "exportName": "REF_CARBON_GAS_TERMINATION_15.35",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Clamp_0",
+      "exportName": "REF_CARBON_GAS_Clamp_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Support_0",
+      "exportName": "REF_CARBON_GAS_Support_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Clamp_2",
+      "exportName": "REF_CARBON_GAS_Clamp_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Support_2",
+      "exportName": "REF_CARBON_GAS_Support_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Clamp_4",
+      "exportName": "REF_CARBON_GAS_Clamp_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Support_4",
+      "exportName": "REF_CARBON_GAS_Support_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Clamp_6",
+      "exportName": "REF_CARBON_GAS_Clamp_6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Support_6",
+      "exportName": "REF_CARBON_GAS_Support_6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Clamp_8",
+      "exportName": "REF_CARBON_GAS_Clamp_8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Support_8",
+      "exportName": "REF_CARBON_GAS_Support_8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Clamp_10",
+      "exportName": "REF_CARBON_GAS_Clamp_10",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Support_10",
+      "exportName": "REF_CARBON_GAS_Support_10",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Clamp_12",
+      "exportName": "REF_CARBON_GAS_Clamp_12",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Support_12",
+      "exportName": "REF_CARBON_GAS_Support_12",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Clamp_14",
+      "exportName": "REF_CARBON_GAS_Clamp_14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_CARBON_GAS_Support_14",
+      "exportName": "REF_CARBON_GAS_Support_14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_HEADER_EXHAUST",
+      "exportName": "REF_HEADER_EXHAUST",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_EXHAUST_TERMINATION_-0.6",
+      "exportName": "REF_EXHAUST_TERMINATION_-0.6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_TERMINATION_15.35",
+      "exportName": "REF_EXHAUST_TERMINATION_15.35",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Clamp_0",
+      "exportName": "REF_EXHAUST_Clamp_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Support_0",
+      "exportName": "REF_EXHAUST_Support_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Clamp_2",
+      "exportName": "REF_EXHAUST_Clamp_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Support_2",
+      "exportName": "REF_EXHAUST_Support_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Clamp_4",
+      "exportName": "REF_EXHAUST_Clamp_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Support_4",
+      "exportName": "REF_EXHAUST_Support_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Clamp_6",
+      "exportName": "REF_EXHAUST_Clamp_6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Support_6",
+      "exportName": "REF_EXHAUST_Support_6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Clamp_8",
+      "exportName": "REF_EXHAUST_Clamp_8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Support_8",
+      "exportName": "REF_EXHAUST_Support_8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Clamp_10",
+      "exportName": "REF_EXHAUST_Clamp_10",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Support_10",
+      "exportName": "REF_EXHAUST_Support_10",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Clamp_12",
+      "exportName": "REF_EXHAUST_Clamp_12",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Support_12",
+      "exportName": "REF_EXHAUST_Support_12",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Clamp_14",
+      "exportName": "REF_EXHAUST_Clamp_14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_EXHAUST_Support_14",
+      "exportName": "REF_EXHAUST_Support_14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_HEADER_WATER",
+      "exportName": "REF_HEADER_WATER",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_WATER_TERMINATION_-0.6",
+      "exportName": "REF_WATER_TERMINATION_-0.6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_TERMINATION_15.35",
+      "exportName": "REF_WATER_TERMINATION_15.35",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Clamp_0",
+      "exportName": "REF_WATER_Clamp_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Support_0",
+      "exportName": "REF_WATER_Support_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Clamp_2",
+      "exportName": "REF_WATER_Clamp_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Support_2",
+      "exportName": "REF_WATER_Support_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Clamp_4",
+      "exportName": "REF_WATER_Clamp_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Support_4",
+      "exportName": "REF_WATER_Support_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Clamp_6",
+      "exportName": "REF_WATER_Clamp_6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Support_6",
+      "exportName": "REF_WATER_Support_6",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Clamp_8",
+      "exportName": "REF_WATER_Clamp_8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Support_8",
+      "exportName": "REF_WATER_Support_8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Clamp_10",
+      "exportName": "REF_WATER_Clamp_10",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Support_10",
+      "exportName": "REF_WATER_Support_10",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Clamp_12",
+      "exportName": "REF_WATER_Clamp_12",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Support_12",
+      "exportName": "REF_WATER_Support_12",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Clamp_14",
+      "exportName": "REF_WATER_Clamp_14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_WATER_Support_14",
+      "exportName": "REF_WATER_Support_14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G201_Service_Column",
+      "exportName": "REF_G201_Service_Column",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G201_Gauge",
+      "exportName": "REF_G201_Gauge",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G201_Mount",
+      "exportName": "REF_G201_Mount",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_AIR_TO_G201",
+      "exportName": "REF_AIR_TO_G201",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_CARBON_TO_G401",
+      "exportName": "REF_CARBON_TO_G401",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_G401_TO_EXHAUST",
+      "exportName": "REF_G401_TO_EXHAUST",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_CIRC_TEE_G401",
+      "exportName": "REF_CIRC_TEE_G401",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_G401_R401",
+      "exportName": "REF_G401_R401",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "REF_G401_Carbon_NC",
+      "exportName": "REF_G401_Carbon_NC",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Carbon_NC_Handle",
+      "exportName": "REF_G401_Carbon_NC_Handle",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Liquid_NC",
+      "exportName": "REF_G401_Liquid_NC",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Liquid_NC_Handle",
+      "exportName": "REF_G401_Liquid_NC_Handle",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Union_0",
+      "exportName": "REF_G401_Union_0",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Union_1",
+      "exportName": "REF_G401_Union_1",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Union_2",
+      "exportName": "REF_G401_Union_2",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Union_3",
+      "exportName": "REF_G401_Union_3",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Union_4",
+      "exportName": "REF_G401_Union_4",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_G401_Union_5",
+      "exportName": "REF_G401_Union_5",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_SERVICE_SUPPORT_4.14_3.1",
+      "exportName": "REF_SERVICE_SUPPORT_4.14_3.1",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_SERVICE_SUPPORT_8.24_2.8",
+      "exportName": "REF_SERVICE_SUPPORT_8.24_2.8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_SERVICE_SUPPORT_8.24_1.8",
+      "exportName": "REF_SERVICE_SUPPORT_8.24_1.8",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_Service_Upright_4.14",
+      "exportName": "REF_Service_Upright_4.14",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "REF_Service_Upright_8.24",
+      "exportName": "REF_Service_Upright_8.24",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R102_REFERENCE_TEE_COLLAR",
+      "exportName": "R102_REFERENCE_TEE_COLLAR",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Electrode_0",
+      "exportName": "EC101_Electrode_0",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Membrane_0",
+      "exportName": "EC101_Membrane_0",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Electrode_1",
+      "exportName": "EC101_Electrode_1",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Membrane_1",
+      "exportName": "EC101_Membrane_1",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Electrode_2",
+      "exportName": "EC101_Electrode_2",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Membrane_2",
+      "exportName": "EC101_Membrane_2",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Electrode_3",
+      "exportName": "EC101_Electrode_3",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Membrane_3",
+      "exportName": "EC101_Membrane_3",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "EC101_Cell_Label",
+      "exportName": "EC101_Cell_Label",
+      "assembly": "WEB_EC101",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "EC101_PSU_Concept",
+      "exportName": "EC101_PSU_Concept",
+      "assembly": "WEB_EC101",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G201_Gas_Pump",
+      "exportName": "G201_Gas_Pump",
+      "assembly": "WEB_G201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G201_Filter",
+      "exportName": "G201_Filter",
+      "assembly": "WEB_G201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G201_Flow_Device",
+      "exportName": "G201_Flow_Device",
+      "assembly": "WEB_G201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "G201_Service_Label",
+      "exportName": "G201_Service_Label",
+      "assembly": "WEB_G201",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "R201_Diffuser_3.65",
+      "exportName": "R201_Diffuser_3.65",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Diffuser_3.85",
+      "exportName": "R201_Diffuser_3.85",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Diffuser_4.05",
+      "exportName": "R201_Diffuser_4.05",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Carrier_Rack_0",
+      "exportName": "R201_Carrier_Rack_0",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Carrier_Rack_1",
+      "exportName": "R201_Carrier_Rack_1",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Carrier_Rack_2",
+      "exportName": "R201_Carrier_Rack_2",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Carrier_Rack_3",
+      "exportName": "R201_Carrier_Rack_3",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Carrier_Rack_4",
+      "exportName": "R201_Carrier_Rack_4",
+      "assembly": "WEB_R201",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R201_Service_Label",
+      "exportName": "R201_Service_Label",
+      "assembly": "WEB_R201",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "R401_LED_Bar_00",
+      "exportName": "R401_LED_Bar_00",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_01",
+      "exportName": "R401_LED_Bar_01",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_02",
+      "exportName": "R401_LED_Bar_02",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_10",
+      "exportName": "R401_LED_Bar_10",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_11",
+      "exportName": "R401_LED_Bar_11",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_12",
+      "exportName": "R401_LED_Bar_12",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_20",
+      "exportName": "R401_LED_Bar_20",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_21",
+      "exportName": "R401_LED_Bar_21",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_22",
+      "exportName": "R401_LED_Bar_22",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_30",
+      "exportName": "R401_LED_Bar_30",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_31",
+      "exportName": "R401_LED_Bar_31",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_32",
+      "exportName": "R401_LED_Bar_32",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_40",
+      "exportName": "R401_LED_Bar_40",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_41",
+      "exportName": "R401_LED_Bar_41",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_42",
+      "exportName": "R401_LED_Bar_42",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_50",
+      "exportName": "R401_LED_Bar_50",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_51",
+      "exportName": "R401_LED_Bar_51",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_LED_Bar_52",
+      "exportName": "R401_LED_Bar_52",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Probe_0",
+      "exportName": "R401_Probe_0",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Probe_1",
+      "exportName": "R401_Probe_1",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Probe_2",
+      "exportName": "R401_Probe_2",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Coolant_Service",
+      "exportName": "R401_Coolant_Service",
+      "assembly": "WEB_R401",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "R401_Service_Label",
+      "exportName": "R401_Service_Label",
+      "assembly": "WEB_R401",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "F501_Media_Element_0",
+      "exportName": "F501_Media_Element_0",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Media_Element_1",
+      "exportName": "F501_Media_Element_1",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Media_Element_2",
+      "exportName": "F501_Media_Element_2",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Media_Element_3",
+      "exportName": "F501_Media_Element_3",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Media_Element_4",
+      "exportName": "F501_Media_Element_4",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Capture_Tray",
+      "exportName": "F501_Capture_Tray",
+      "assembly": "WEB_F501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F501_Service_Label",
+      "exportName": "F501_Service_Label",
+      "assembly": "WEB_F501",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "T501_Wash_Manifold",
+      "exportName": "T501_Wash_Manifold",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Spray_Bar",
+      "exportName": "T501_Spray_Bar",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T501_Service_Label",
+      "exportName": "T501_Service_Label",
+      "assembly": "WEB_T501",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "W601_Separation_Module",
+      "exportName": "W601_Separation_Module",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "W601_Reject_Module",
+      "exportName": "W601_Reject_Module",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "W601_Sample_Port",
+      "exportName": "W601_Sample_Port",
+      "assembly": "WEB_W601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "W601_Service_Label",
+      "exportName": "W601_Service_Label",
+      "assembly": "WEB_W601",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "T601_Sample_Port",
+      "exportName": "T601_Sample_Port",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Release_Isolation",
+      "exportName": "T601_Release_Isolation",
+      "assembly": "WEB_T601",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T601_Service_Label",
+      "exportName": "T601_Service_Label",
+      "assembly": "WEB_T601",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "H701_Tray_0",
+      "exportName": "H701_Tray_0",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Tray_1",
+      "exportName": "H701_Tray_1",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Tray_2",
+      "exportName": "H701_Tray_2",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Process_Service",
+      "exportName": "H701_Process_Service",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "H701_Service_Label",
+      "exportName": "H701_Service_Label",
+      "assembly": "WEB_H701",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "DR701_Tray_0",
+      "exportName": "DR701_Tray_0",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Tray_1",
+      "exportName": "DR701_Tray_1",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Tray_2",
+      "exportName": "DR701_Tray_2",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Process_Service",
+      "exportName": "DR701_Process_Service",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "DR701_Service_Label",
+      "exportName": "DR701_Service_Label",
+      "assembly": "WEB_DR701",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "FD701_Tray_0",
+      "exportName": "FD701_Tray_0",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Tray_1",
+      "exportName": "FD701_Tray_1",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Tray_2",
+      "exportName": "FD701_Tray_2",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Process_Service",
+      "exportName": "FD701_Process_Service",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "FD701_Service_Label",
+      "exportName": "FD701_Service_Label",
+      "assembly": "WEB_FD701",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "PK801_Sealing_Bar",
+      "exportName": "PK801_Sealing_Bar",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PK801_Tool_Set",
+      "exportName": "PK801_Tool_Set",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PK801_Seal_Check",
+      "exportName": "PK801_Seal_Check",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T801_Lot_Shelf_0",
+      "exportName": "T801_Lot_Shelf_0",
+      "assembly": "WEB_T801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T801_Lot_Shelf_1",
+      "exportName": "T801_Lot_Shelf_1",
+      "assembly": "WEB_T801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "T801_Lot_Shelf_2",
+      "exportName": "T801_Lot_Shelf_2",
+      "assembly": "WEB_T801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_PSU",
+      "exportName": "PLC901_PSU",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_IO_Rack",
+      "exportName": "PLC901_IO_Rack",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Terminal_Block",
+      "exportName": "PLC901_Terminal_Block",
+      "assembly": "WEB_PLC901",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PLC901_Service_Label",
+      "exportName": "PLC901_Service_Label",
+      "assembly": "WEB_PLC901",
+      "sourceType": "FONT"
+    },
+    {
+      "sourceName": "WF2_R102_F101_TRANSFER",
+      "exportName": "WF2_R102_F101_TRANSFER",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "R102_Product_Outlet_Union",
+      "exportName": "R102_Product_Outlet_Union",
+      "assembly": "WEB_R102",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "F101_R102_Transfer_Union",
+      "exportName": "F101_R102_Transfer_Union",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_T501_TransferPump",
+      "exportName": "PT_T501_TransferPump",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_T501_ProductOutlet",
+      "exportName": "PT_T501_ProductOutlet",
+      "assembly": "WEB_T501",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Product_Transfer_Pump",
+      "exportName": "PT_Product_Transfer_Pump",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Wet_Selector_Header",
+      "exportName": "PT_Wet_Selector_Header",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_Wet_To_H701",
+      "exportName": "PT_Wet_To_H701",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_H701_Inlet_NC_Body",
+      "exportName": "PT_H701_Inlet_NC_Body",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_H701_Inlet_NC_Stem",
+      "exportName": "PT_H701_Inlet_NC_Stem",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_H701_Inlet_NC_Handle",
+      "exportName": "PT_H701_Inlet_NC_Handle",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_H701_BatchInlet",
+      "exportName": "PT_H701_BatchInlet",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_H701_To_Product_Header",
+      "exportName": "PT_H701_To_Product_Header",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_H701_BatchOutlet",
+      "exportName": "PT_H701_BatchOutlet",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_H701_Outlet_NC_Body",
+      "exportName": "PT_H701_Outlet_NC_Body",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_H701_Outlet_NC_Stem",
+      "exportName": "PT_H701_Outlet_NC_Stem",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_H701_Outlet_NC_Handle",
+      "exportName": "PT_H701_Outlet_NC_Handle",
+      "assembly": "WEB_H701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Wet_To_DR701",
+      "exportName": "PT_Wet_To_DR701",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_DR701_Inlet_NC_Body",
+      "exportName": "PT_DR701_Inlet_NC_Body",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_DR701_Inlet_NC_Stem",
+      "exportName": "PT_DR701_Inlet_NC_Stem",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_DR701_Inlet_NC_Handle",
+      "exportName": "PT_DR701_Inlet_NC_Handle",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_DR701_BatchInlet",
+      "exportName": "PT_DR701_BatchInlet",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_DR701_To_Product_Header",
+      "exportName": "PT_DR701_To_Product_Header",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_DR701_BatchOutlet",
+      "exportName": "PT_DR701_BatchOutlet",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_DR701_Outlet_NC_Body",
+      "exportName": "PT_DR701_Outlet_NC_Body",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_DR701_Outlet_NC_Stem",
+      "exportName": "PT_DR701_Outlet_NC_Stem",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_DR701_Outlet_NC_Handle",
+      "exportName": "PT_DR701_Outlet_NC_Handle",
+      "assembly": "WEB_DR701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Wet_To_FD701",
+      "exportName": "PT_Wet_To_FD701",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_FD701_Inlet_NC_Body",
+      "exportName": "PT_FD701_Inlet_NC_Body",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_FD701_Inlet_NC_Stem",
+      "exportName": "PT_FD701_Inlet_NC_Stem",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_FD701_Inlet_NC_Handle",
+      "exportName": "PT_FD701_Inlet_NC_Handle",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_FD701_BatchInlet",
+      "exportName": "PT_FD701_BatchInlet",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_FD701_To_Product_Header",
+      "exportName": "PT_FD701_To_Product_Header",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_FD701_BatchOutlet",
+      "exportName": "PT_FD701_BatchOutlet",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_FD701_Outlet_NC_Body",
+      "exportName": "PT_FD701_Outlet_NC_Body",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_FD701_Outlet_NC_Stem",
+      "exportName": "PT_FD701_Outlet_NC_Stem",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_FD701_Outlet_NC_Handle",
+      "exportName": "PT_FD701_Outlet_NC_Handle",
+      "assembly": "WEB_FD701",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Processed_Selector_Header",
+      "exportName": "PT_Processed_Selector_Header",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_PK801_Product_Hopper",
+      "exportName": "PT_PK801_Product_Hopper",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Hopper_To_PK801",
+      "exportName": "PT_Hopper_To_PK801",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "CURVE"
+    },
+    {
+      "sourceName": "PT_PK801_Fill_Interface",
+      "exportName": "PT_PK801_Fill_Interface",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_PK801_T801_Conveyor",
+      "exportName": "PT_PK801_T801_Conveyor",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_PK801_T801_Belt",
+      "exportName": "PT_PK801_T801_Belt",
+      "assembly": "WEB_PIPEWORK",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_T801_Infeed_Conveyor",
+      "exportName": "PT_T801_Infeed_Conveyor",
+      "assembly": "WEB_T801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_T801_Infeed_Belt",
+      "exportName": "PT_T801_Infeed_Belt",
+      "assembly": "WEB_T801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sealed_Sachet_0",
+      "exportName": "PT_Sealed_Sachet_0",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_TopSeal_0",
+      "exportName": "PT_Sachet_TopSeal_0",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_Label_0",
+      "exportName": "PT_Sachet_Label_0",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sealed_Sachet_1",
+      "exportName": "PT_Sealed_Sachet_1",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_TopSeal_1",
+      "exportName": "PT_Sachet_TopSeal_1",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_Label_1",
+      "exportName": "PT_Sachet_Label_1",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sealed_Sachet_2",
+      "exportName": "PT_Sealed_Sachet_2",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_TopSeal_2",
+      "exportName": "PT_Sachet_TopSeal_2",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_Label_2",
+      "exportName": "PT_Sachet_Label_2",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sealed_Sachet_3",
+      "exportName": "PT_Sealed_Sachet_3",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_TopSeal_3",
+      "exportName": "PT_Sachet_TopSeal_3",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_Label_3",
+      "exportName": "PT_Sachet_Label_3",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sealed_Sachet_4",
+      "exportName": "PT_Sealed_Sachet_4",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_TopSeal_4",
+      "exportName": "PT_Sachet_TopSeal_4",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    },
+    {
+      "sourceName": "PT_Sachet_Label_4",
+      "exportName": "PT_Sachet_Label_4",
+      "assembly": "WEB_PK801",
+      "sourceType": "MESH"
+    }
+  ],
+  "limitations": [
+    "Static concept model, not validated process routing",
+    "R102 -> F101 and the upstream R102 tee remain unchanged and unverified",
+    "Water return requires intended-use approval",
+    "Cabinet product-transfer pipe interfaces remain illustrative",
+    "Export reads the saved main file; unsaved live-session edits are not exported"
+  ]
+}

@@ -2,9 +2,11 @@ import { lazy, Suspense, useRef, useState } from 'react'
 import { ArrowRight, Recycle, Menu, X } from 'lucide-react'
 const MachineViewer = lazy(() => import('./components/viewer/MachineViewer').then(module => ({ default: module.MachineViewer })))
 import { ProcessSheet } from './components/bottom-sheet/ProcessSheet'
+import { ProcessDetails } from './components/bottom-sheet/ProcessDetails'
 import { ViewerBoundary } from './components/viewer/ViewerBoundary'
 import { ResearchSection } from './components/research/ResearchSection'
-import { dataIssues, steps } from './data/config'
+import { dataIssues, flowPaths, steps } from './data/config'
+import { FULL_CLOCK } from './simulation/simulator'
 import { useSimulator } from './simulation/useSimulator'
 import './styles/app.css'
 
@@ -12,7 +14,7 @@ const links = [['Overview', '#overview'], ['Research', '#research'], ['Technolog
 
 export default function App() {
   const [menu, setMenu] = useState(false)
-  const simulator = useSimulator(steps)
+  const simulator = useSimulator(steps, FULL_CLOCK)
   const stage = useRef<HTMLElement>(null)
   const menuButton = useRef<HTMLButtonElement>(null)
   function enterDemo() {
@@ -29,12 +31,14 @@ export default function App() {
     </header>
     <main id="overview">
       {dataIssues.length > 0 && <aside className="data-notice" role="alert"><strong>ข้อมูลบางส่วนยังไม่พร้อมใช้งาน</strong><p>ส่วนอื่นของเว็บไซต์ยังใช้งานได้ กรุณาตรวจข้อมูลต่อไปนี้</p><ul>{dataIssues.map((issue, i) => <li key={i}>{issue}</li>)}</ul></aside>}
-      <section ref={stage} id="simulator" className="simulator" tabIndex={-1} aria-label="พื้นที่สำรวจเครื่อง DMR" data-demo-mode={simulator.state.demoMode}>
-        <div className="viewer-heading"><h1>DEMETER ReFeed</h1><h2>Turn Waste Into <br/>New Value</h2><button type="button" className="primary hero-cta" aria-pressed={simulator.state.demoMode} onClick={enterDemo}>Start Demo <ArrowRight size={21}/></button></div>
-        <ViewerBoundary><Suspense fallback={<div className="canvas-wrap canvas-fallback">กำลังเตรียมพื้นที่สามมิติ…</div>}><MachineViewer demoMode={simulator.state.demoMode} activeStep={simulator.step} selectedPartId={simulator.state.selectedPartId} onSelectPart={simulator.selectPart}/></Suspense></ViewerBoundary>
+      <div className="stage-layout"><section ref={stage} id="simulator" className="simulator" tabIndex={-1} aria-label="พื้นที่สำรวจเครื่อง DMR" data-demo-mode={simulator.state.demoMode}>
+        <h1 className="sr-only">สำรวจเครื่อง DMR</h1>
+        <ViewerBoundary><Suspense fallback={<div className="canvas-wrap canvas-fallback">กำลังเตรียมพื้นที่สามมิติ…</div>}><MachineViewer demoMode={simulator.state.demoMode} activeStep={simulator.step} seconds={simulator.state.playheadSeconds} flows={flowPaths} selectedPartId={simulator.state.selectedPartId} onSelectPart={simulator.selectPart}/></Suspense></ViewerBoundary>
       </section>
-      <ProcessSheet simulator={simulator}/>
-      <section id="technology" className="below-section"><div><span className="section-label">BUILT FOR EXPLORATION</span><h2>พื้นที่สำหรับเข้าใจ<br/>ทุกส่วนของกระบวนการ.</h2></div><div><p>โครงสร้างพร้อมเชื่อมโมเดลสามมิติ ข้อมูลชิ้นส่วน และขั้นตอนที่ผ่านการยืนยัน เพื่ออธิบายเครื่อง DMR อย่างชัดเจน</p><span className="subtle-badge">โมเดลจริง · Smart X-Ray · Flow paths — รอข้อมูล</span></div></section>
+      <ProcessDetails simulator={simulator}/>
+      </div>
+      <ProcessSheet simulator={simulator} showDetails={false}/>
+      <section id="technology" className="below-section"><div><span className="section-label">BUILT FOR EXPLORATION</span><h2>พื้นที่สำหรับเข้าใจ<br/>ทุกส่วนของกระบวนการ.</h2></div><div><p>สำรวจโมเดลเครื่อง DMR พร้อมคำอธิบายและสูตรประกอบแต่ละขั้นตอน</p><span className="subtle-badge">นำเสนออัตโนมัติ 60 วินาที · ภาพประกอบครบ 60 วินาที · แปรรูปเป็นตัวอย่าง · ไม่ใช่เวลาบำบัดจริง</span></div></section>
       <ResearchSection/>
       <footer id="about"><a className="footer-brand" href="#overview"><Recycle size={21}/> DEMETER ReFeed</a><p>Interactive 3D Process Simulator · Phase 1.1 Foundation</p><span>DESIGNED TO UNDERSTAND.</span></footer>
     </main>

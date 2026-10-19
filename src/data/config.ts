@@ -4,12 +4,13 @@ import pathsData from './flow-paths.json'
 import researchData from './research.json'
 import { parseFlows, parseParts, parseResearch, parseSteps, readData } from './parse'
 import type { ViewerQuality } from '../types/machine'
+import { chemistryByStep } from './process-chemistry'
 
 const process = readData(processData, parseSteps, 'ข้อมูลกระบวนการ')
 const machine = readData(partsData, parseParts, 'ข้อมูลชิ้นส่วน')
 const flow = readData(pathsData, parseFlows, 'เส้นทางการไหล')
 const research = readData(researchData, parseResearch, 'ข้อมูลงานวิจัย')
-export const steps = process.items
+export const steps = process.items.map(step=>({...step,chemistry:chemistryByStep[step.id],formulas:chemistryByStep[step.id]?.formulas ?? step.formulas}))
 export const parts = machine.items
 export const flowPaths = flow.items
 export const papers = research.items
@@ -26,5 +27,5 @@ for (const path of flowPaths) {
   for (const end of [path.from, path.to]) if (end && !parts.some(part => part.id === end.partId && part.connectionPoints?.some(point => point.id === end.connectionId))) dataIssues.push(`${path.id}: ไม่พบจุดเชื่อมต่อ ${end.partId}/${end.connectionId}`)
 }
 export const viewerQuality: ViewerQuality = { dpr: [1, 1.5], contactShadows: true, shadowResolution: 128 }
-// Supply '/models/dmr-machine.glb' only after the verified model is available.
-export const modelUrl: string | null = null
+// Static visual export; presence does not validate process routing.
+export const modelUrl: string | null = '/models/dmr-machine.glb'

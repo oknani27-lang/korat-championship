@@ -1,1 +1,919 @@
-[]
+[
+  {
+    "id": "feed-to-pump",
+    "partIds": [
+      "T101",
+      "P101"
+    ],
+    "points": [
+      [
+        -6.4650002,
+        2.6324999,
+        0.0504957
+      ],
+      [
+        -6.4349999,
+        2.6324999,
+        0.0504957
+      ],
+      [
+        -6.4349999,
+        2.6324999,
+        0.3004957
+      ],
+      [
+        -6.5050001,
+        2.6324999,
+        0.3004957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "T101",
+      "connectionId": "feed-to-pump-out"
+    },
+    "to": {
+      "partId": "P101",
+      "connectionId": "feed-to-pump-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_T101_P101",
+        "T101_Outlet_End",
+        "P101_Feed_Pump_Concept"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 3.25,
+      "endSeconds": 4.65,
+      "substances": [
+        "water",
+        "urea",
+        "phosphorus"
+      ]
+    }
+  },
+  {
+    "id": "pump-to-cell",
+    "partIds": [
+      "P101",
+      "EC101"
+    ],
+    "points": [
+      [
+        -6.3049998,
+        2.6324999,
+        0.3004957
+      ],
+      [
+        -6.3049998,
+        3.1624999,
+        0.3004957
+      ],
+      [
+        -6.3049998,
+        3.1624999,
+        0.0504957
+      ],
+      [
+        -6.2649999,
+        3.1624999,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "P101",
+      "connectionId": "pump-to-cell-out"
+    },
+    "to": {
+      "partId": "EC101",
+      "connectionId": "pump-to-cell-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_P101_EC101",
+        "P101_Feed_Pump_Concept",
+        "EC101_Header.001"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 4.75,
+      "endSeconds": 6.25,
+      "substances": [
+        "water",
+        "urea",
+        "phosphorus"
+      ]
+    }
+  },
+  {
+    "id": "cell-to-filter",
+    "partIds": [
+      "EC101",
+      "F101"
+    ],
+    "points": [
+      [
+        -5.5250001,
+        3.1624999,
+        0.0504957
+      ],
+      [
+        -5.2750001,
+        3.1624999,
+        0.0504957
+      ],
+      [
+        -5.2750001,
+        2.8025,
+        0.0504957
+      ],
+      [
+        -4.8599997,
+        2.8025,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "EC101",
+      "connectionId": "cell-to-filter-out"
+    },
+    "to": {
+      "partId": "F101",
+      "connectionId": "cell-to-filter-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_EC101_F101",
+        "EC101_Header.001",
+        "F101_Filter_Housing_12_Sides"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 10,
+      "endSeconds": 12.6,
+      "substances": [
+        "water",
+        "urea",
+        "sediment"
+      ]
+    }
+  },
+  {
+    "id": "filter-to-bioreactor",
+    "partIds": [
+      "F101",
+      "R201"
+    ],
+    "points": [
+      [
+        -4.4499998,
+        2.4624999,
+        0.0504957
+      ],
+      [
+        -4.1750002,
+        2.4624999,
+        0.0504957
+      ],
+      [
+        -4.1750002,
+        2.6724999,
+        0.0504957
+      ],
+      [
+        -3.9549999,
+        2.6724999,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "F101",
+      "connectionId": "filter-to-bioreactor-out"
+    },
+    "to": {
+      "partId": "R201",
+      "connectionId": "filter-to-bioreactor-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_F101_R201",
+        "F101_Filter_Housing_12_Sides",
+        "R201_Body"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 17,
+      "endSeconds": 18.3,
+      "substances": [
+        "water",
+        "urea"
+      ]
+    }
+  },
+  {
+    "id": "bioreactor-to-hold",
+    "partIds": [
+      "R201",
+      "T301"
+    ],
+    "points": [
+      [
+        -3.0949998,
+        2.6025,
+        0.0504957
+      ],
+      [
+        -2.9450002,
+        2.6025,
+        0.0504957
+      ],
+      [
+        -2.9450002,
+        2.2224998,
+        0.0504957
+      ],
+      [
+        -2.8649998,
+        2.2224998,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "R201",
+      "connectionId": "bioreactor-to-hold-out"
+    },
+    "to": {
+      "partId": "T301",
+      "connectionId": "bioreactor-to-hold-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_R201_T301",
+        "R201_Body",
+        "T301_Body"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 22.2,
+      "endSeconds": 23.5,
+      "substances": [
+        "water",
+        "urea",
+        "nitrate"
+      ]
+    }
+  },
+  {
+    "id": "hold-to-formulation",
+    "partIds": [
+      "T301",
+      "T302"
+    ],
+    "points": [
+      [
+        -1.9850001,
+        2.2224998,
+        0.0504957
+      ],
+      [
+        -1.855,
+        2.2224998,
+        0.0504957
+      ],
+      [
+        -1.855,
+        2.0525,
+        0.0504957
+      ],
+      [
+        -1.7649999,
+        2.0525,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "T301",
+      "connectionId": "hold-to-formulation-out"
+    },
+    "to": {
+      "partId": "T302",
+      "connectionId": "hold-to-formulation-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_T301_T302",
+        "T301_Body",
+        "T302_Body"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 25.25,
+      "endSeconds": 26.5,
+      "substances": [
+        "water",
+        "urea",
+        "nitrate"
+      ]
+    }
+  },
+  {
+    "id": "formulation-to-dosing",
+    "partIds": [
+      "T302",
+      "P301"
+    ],
+    "points": [
+      [
+        -0.8850002,
+        2.2024999,
+        0.0504957
+      ],
+      [
+        -0.8449998,
+        2.2024999,
+        0.0504957
+      ],
+      [
+        -0.8449998,
+        2.2024999,
+        0.4004957
+      ],
+      [
+        -0.8449998,
+        1.8025,
+        0.4004957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "T302",
+      "connectionId": "formulation-to-dosing-out"
+    },
+    "to": {
+      "partId": "P301",
+      "connectionId": "formulation-to-dosing-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_T302_P301",
+        "T302_Body",
+        "P301_Dosing_Pump_Concept"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 29.05,
+      "endSeconds": 30,
+      "substances": [
+        "water",
+        "urea",
+        "nitrate"
+      ]
+    }
+  },
+  {
+    "id": "dosing-to-culture",
+    "partIds": [
+      "P301",
+      "R401"
+    ],
+    "points": [
+      [
+        -0.645,
+        1.8025,
+        0.4004957
+      ],
+      [
+        -0.5749998,
+        1.8025,
+        0.4004957
+      ],
+      [
+        -0.5749998,
+        1.8025,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "P301",
+      "connectionId": "dosing-to-culture-out"
+    },
+    "to": {
+      "partId": "R401",
+      "connectionId": "dosing-to-culture-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_P301_R401",
+        "P301_Dosing_Pump_Concept",
+        "R401_Body"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 30,
+      "endSeconds": 30.9,
+      "substances": [
+        "water",
+        "urea",
+        "nitrate"
+      ]
+    }
+  },
+  {
+    "id": "culture-to-circulation",
+    "partIds": [
+      "R401",
+      "P401"
+    ],
+    "points": [
+      [
+        -0.0749998,
+        1.4524999,
+        0.5504957
+      ],
+      [
+        -0.0749998,
+        1.4524999,
+        0.8004957
+      ],
+      [
+        -0.0749998,
+        1.0324999,
+        0.8004957
+      ],
+      [
+        0.7550001,
+        1.0324999,
+        0.8004957
+      ],
+      [
+        0.7550001,
+        1.0324999,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "R401",
+      "connectionId": "culture-to-circulation-out"
+    },
+    "to": {
+      "partId": "P401",
+      "connectionId": "culture-to-circulation-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_R401_P401",
+        "R401_Body",
+        "P401_Pump"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 32,
+      "endSeconds": 33.4,
+      "substances": [
+        "water",
+        "nitrate",
+        "algae"
+      ]
+    }
+  },
+  {
+    "id": "circulation-to-sensor",
+    "partIds": [
+      "P401",
+      "AIT401"
+    ],
+    "points": [
+      [
+        1.1949997,
+        1.0324999,
+        0.0504957
+      ],
+      [
+        1.375,
+        1.0324999,
+        0.0504957
+      ],
+      [
+        1.375,
+        1.0324999,
+        0.2904958
+      ],
+      [
+        1.4750004,
+        1.2925,
+        0.2904958
+      ],
+      [
+        1.6549997,
+        1.2925,
+        0.2904958
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "P401",
+      "connectionId": "circulation-to-sensor-out"
+    },
+    "to": {
+      "partId": "AIT401",
+      "connectionId": "circulation-to-sensor-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_P401_SENSOR",
+        "P401_Pump",
+        "AIT401_Wetted_Interface"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 33.45,
+      "endSeconds": 35,
+      "substances": [
+        "water",
+        "nitrate",
+        "algae"
+      ]
+    }
+  },
+  {
+    "id": "sensor-to-culture",
+    "partIds": [
+      "AIT401",
+      "R401"
+    ],
+    "points": [
+      [
+        1.6549997,
+        1.2925,
+        0.2904958
+      ],
+      [
+        1.7250004,
+        1.2925,
+        0.2904958
+      ],
+      [
+        1.7250004,
+        1.2925,
+        -0.6495042
+      ],
+      [
+        1.7250004,
+        0.9024999,
+        -0.6495042
+      ],
+      [
+        -0.0749998,
+        0.9024999,
+        -0.6495042
+      ],
+      [
+        -0.0749998,
+        3.3525,
+        -0.6495042
+      ],
+      [
+        -0.0749998,
+        3.3525,
+        -0.4495043
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "AIT401",
+      "connectionId": "sensor-to-culture-out"
+    },
+    "to": {
+      "partId": "R401",
+      "connectionId": "sensor-to-culture-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_SENSOR_R401",
+        "AIT401_Wetted_Interface",
+        "R401_Body"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 35.1,
+      "endSeconds": 37.8,
+      "substances": [
+        "water",
+        "nitrate",
+        "algae"
+      ]
+    }
+  },
+  {
+    "id": "culture-to-harvest",
+    "partIds": [
+      "R401",
+      "F501"
+    ],
+    "points": [
+      [
+        0.4250002,
+        2.2525001,
+        0.0504957
+      ],
+      [
+        0.5050001,
+        2.2525001,
+        -0.4995043
+      ],
+      [
+        1.5749998,
+        2.2525001,
+        -0.4995043
+      ],
+      [
+        1.5749998,
+        2.9325001,
+        -0.4995043
+      ],
+      [
+        1.7449999,
+        2.9325001,
+        -0.4995043
+      ],
+      [
+        1.7449999,
+        2.9325001,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "R401",
+      "connectionId": "culture-to-harvest-out"
+    },
+    "to": {
+      "partId": "F501",
+      "connectionId": "culture-to-harvest-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_R401_F501",
+        "R401_Body",
+        "F501_Body"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 38.1,
+      "endSeconds": 39.8,
+      "substances": [
+        "water",
+        "nitrate",
+        "algae"
+      ]
+    }
+  },
+  {
+    "id": "harvest-to-biomass",
+    "partIds": [
+      "F501",
+      "T501"
+    ],
+    "points": [
+      [
+        2.2049999,
+        2.2024999,
+        0.0504957
+      ],
+      [
+        2.375,
+        2.2024999,
+        0.0504957
+      ],
+      [
+        2.375,
+        2.0325,
+        0.0504957
+      ],
+      [
+        2.5150003,
+        2.0325,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "F501",
+      "connectionId": "harvest-to-biomass-out"
+    },
+    "to": {
+      "partId": "T501",
+      "connectionId": "harvest-to-biomass-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_F501_T501",
+        "F501_Body",
+        "T501_Body"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 40.5,
+      "endSeconds": 43.5,
+      "substances": [
+        "water",
+        "nitrate",
+        "algae"
+      ]
+    }
+  },
+  {
+    "id": "filtrate-to-recovery",
+    "partIds": [
+      "F501",
+      "W601"
+    ],
+    "points": [
+      [
+        1.9750004,
+        1.9524999,
+        0.2804958
+      ],
+      [
+        1.9750004,
+        1.9524999,
+        0.5504957
+      ],
+      [
+        1.9750004,
+        1.1025,
+        0.5504957
+      ],
+      [
+        2.3249998,
+        1.1025,
+        0.5504957
+      ],
+      [
+        2.3249998,
+        1.1025,
+        0.3754957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "F501",
+      "connectionId": "filtrate-to-recovery-out"
+    },
+    "to": {
+      "partId": "W601",
+      "connectionId": "filtrate-to-recovery-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_F501_W601",
+        "F501_Body",
+        "W601_Pending"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 44,
+      "endSeconds": 45.4,
+      "substances": [
+        "water",
+        "nitrate"
+      ]
+    }
+  },
+  {
+    "id": "candidate-to-water-hold",
+    "partIds": [
+      "W601",
+      "T601"
+    ],
+    "points": [
+      [
+        2.9700003,
+        0.9024999,
+        0.0504957
+      ],
+      [
+        3.085,
+        0.9024999,
+        0.0504957
+      ],
+      [
+        3.085,
+        0.9024999,
+        0.6004958
+      ],
+      [
+        3.085,
+        1.4924999,
+        0.6004958
+      ],
+      [
+        3.5749998,
+        1.4924999,
+        0.6004958
+      ],
+      [
+        3.5749998,
+        1.4924999,
+        0.0504957
+      ],
+      [
+        3.5749998,
+        1.3625,
+        0.0504957
+      ]
+    ],
+    "medium": "liquid",
+    "from": {
+      "partId": "W601",
+      "connectionId": "candidate-to-water-hold-out"
+    },
+    "to": {
+      "partId": "T601",
+      "connectionId": "candidate-to-water-hold-in"
+    },
+    "evidence": {
+      "sourceObjects": [
+        "WF2_W601_T601",
+        "W601_Pending",
+        "T601_Neck"
+      ],
+      "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+      "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+      "status": "geometry-checked",
+      "note": "Centerline copied from saved visible POLY curve; endpoints meet equipment geometry. Visual placement only, not hydraulic validation. Opaque pump/cell internals are not interpolated."
+    },
+    "animation": {
+      "startSeconds": 46,
+      "endSeconds": 47.4,
+      "substances": [
+        "water",
+        "nitrate"
+      ]
+    }
+  }
+]

@@ -1,0 +1,1611 @@
+{
+  "sourceSha256": "041db30b47b2174d1e233b9cd971969add8bfa66d7a68d8996dea7027d940c7a",
+  "glbSha256": "f54ad5ff0d28752c5bc4f6b29babe0497910074e17d1b483276ee3649cdf5d3d",
+  "inventorySha256": "186d84fe27e563e289667b8590c345f085d4ebb49958e2d5811ff5ddc78dee77",
+  "coordinates": "Web/model coordinates; not verified physical build dimensions",
+  "objects": [
+    {
+      "object": "T501_Body",
+      "min": [
+        2.5150003,
+        1.8525,
+        -0.4095043
+      ],
+      "max": [
+        3.4350004,
+        3.0125,
+        0.5104958
+      ],
+      "exportName": "T501_Body"
+    },
+    {
+      "object": "T501_Flange",
+      "min": [
+        2.4874001,
+        1.8199999,
+        -0.4371043
+      ],
+      "max": [
+        3.4626007,
+        1.885,
+        0.5380957
+      ],
+      "exportName": "T501_Flange"
+    },
+    {
+      "object": "T501_Cap",
+      "min": [
+        2.5288,
+        1.8724999,
+        -0.3957043
+      ],
+      "max": [
+        3.4212008,
+        1.9124999,
+        0.4966958
+      ],
+      "exportName": "T501_Cap"
+    },
+    {
+      "object": "T501_Flange.001",
+      "min": [
+        2.4874001,
+        2.98,
+        -0.4371043
+      ],
+      "max": [
+        3.4626007,
+        3.0450001,
+        0.5380957
+      ],
+      "exportName": "T501_Flange.001"
+    },
+    {
+      "object": "T501_Cap.001",
+      "min": [
+        2.5288,
+        3.0325,
+        -0.3957043
+      ],
+      "max": [
+        3.4212008,
+        3.0725,
+        0.4966958
+      ],
+      "exportName": "T501_Cap.001"
+    },
+    {
+      "object": "T501_Neck",
+      "min": [
+        2.9100008,
+        3.0374999,
+        -0.0145043
+      ],
+      "max": [
+        3.04,
+        3.1875,
+        0.1154957
+      ],
+      "exportName": "T501_Neck"
+    },
+    {
+      "object": "T501_Leg",
+      "min": [
+        2.5795002,
+        0.5524999,
+        0.3219957
+      ],
+      "max": [
+        2.6345005,
+        1.8525,
+        0.3769957
+      ],
+      "exportName": "T501_Leg"
+    },
+    {
+      "object": "T501_Leg.001",
+      "min": [
+        2.5795002,
+        0.5524999,
+        -0.2760043
+      ],
+      "max": [
+        2.6345005,
+        1.8525,
+        -0.2210042
+      ],
+      "exportName": "T501_Leg.001"
+    },
+    {
+      "object": "T501_Leg.002",
+      "min": [
+        3.3155003,
+        0.5524999,
+        0.3219957
+      ],
+      "max": [
+        3.3705006,
+        1.8525,
+        0.3769957
+      ],
+      "exportName": "T501_Leg.002"
+    },
+    {
+      "object": "T501_Leg.003",
+      "min": [
+        3.3155003,
+        0.5524999,
+        -0.2760043
+      ],
+      "max": [
+        3.3705006,
+        1.8525,
+        -0.2210042
+      ],
+      "exportName": "T501_Leg.003"
+    },
+    {
+      "object": "T501_Sign",
+      "min": [
+        2.7150002,
+        3.2674999,
+        0.5179957
+      ],
+      "max": [
+        3.2350006,
+        3.4375,
+        0.5429957
+      ],
+      "exportName": "T501_Sign"
+    },
+    {
+      "object": "T501_Contents",
+      "min": [
+        2.5110006,
+        1.8924999,
+        -0.4135042
+      ],
+      "max": [
+        3.4390001,
+        2.3525,
+        0.5144957
+      ],
+      "exportName": "T501_Contents"
+    },
+    {
+      "object": "H701_Cabinet",
+      "min": [
+        4.0549994,
+        1.8474998,
+        -0.4545043
+      ],
+      "max": [
+        4.915,
+        3.4974999,
+        0.3154957
+      ],
+      "exportName": "H701_Cabinet"
+    },
+    {
+      "object": "H701_Control",
+      "min": [
+        4.335,
+        3.2425001,
+        0.3179958
+      ],
+      "max": [
+        4.6349993,
+        3.3824999,
+        0.3429957
+      ],
+      "exportName": "H701_Control"
+    },
+    {
+      "object": "H701_Sign",
+      "min": [
+        4.2249994,
+        3.6175001,
+        0.5179957
+      ],
+      "max": [
+        4.7449999,
+        3.7875001,
+        0.5429957
+      ],
+      "exportName": "H701_Sign"
+    },
+    {
+      "object": "H701_Door",
+      "min": [
+        4.1452999,
+        2.0074999,
+        0.3179957
+      ],
+      "max": [
+        4.8246994,
+        3.0975001,
+        0.3629957
+      ],
+      "exportName": "H701_Door"
+    },
+    {
+      "object": "H701_Window",
+      "min": [
+        4.2269993,
+        2.1724999,
+        0.3604957
+      ],
+      "max": [
+        4.743,
+        3.0125,
+        0.3804957
+      ],
+      "exportName": "H701_Window"
+    },
+    {
+      "object": "H701_Rack",
+      "min": [
+        4.2312994,
+        2.2735,
+        0.3814957
+      ],
+      "max": [
+        4.7386999,
+        2.2914999,
+        0.3994958
+      ],
+      "exportName": "H701_Rack"
+    },
+    {
+      "object": "H701_Rack.001",
+      "min": [
+        4.2312994,
+        2.4935,
+        0.3814957
+      ],
+      "max": [
+        4.7386999,
+        2.5114999,
+        0.3994958
+      ],
+      "exportName": "H701_Rack.001"
+    },
+    {
+      "object": "H701_Rack.002",
+      "min": [
+        4.2312994,
+        2.7135,
+        0.3814957
+      ],
+      "max": [
+        4.7386999,
+        2.7315001,
+        0.3994958
+      ],
+      "exportName": "H701_Rack.002"
+    },
+    {
+      "object": "H701_Rack.003",
+      "min": [
+        4.2312994,
+        2.9335001,
+        0.3814957
+      ],
+      "max": [
+        4.7386999,
+        2.9515002,
+        0.3994958
+      ],
+      "exportName": "H701_Rack.003"
+    },
+    {
+      "object": "H701_Handle",
+      "min": [
+        4.7623997,
+        2.4224999,
+        0.3904957
+      ],
+      "max": [
+        4.7924004,
+        2.7225001,
+        0.4504957
+      ],
+      "exportName": "H701_Handle"
+    },
+    {
+      "object": "DR701_Cabinet",
+      "min": [
+        5.0450001,
+        1.8474998,
+        -0.4545043
+      ],
+      "max": [
+        5.9850006,
+        3.4974999,
+        0.3154957
+      ],
+      "exportName": "DR701_Cabinet"
+    },
+    {
+      "object": "DR701_Control",
+      "min": [
+        5.3650007,
+        3.2425001,
+        0.3179958
+      ],
+      "max": [
+        5.665,
+        3.3824999,
+        0.3429957
+      ],
+      "exportName": "DR701_Control"
+    },
+    {
+      "object": "DR701_Sign",
+      "min": [
+        5.2550001,
+        3.6175001,
+        0.5179957
+      ],
+      "max": [
+        5.7750006,
+        3.7875001,
+        0.5429957
+      ],
+      "exportName": "DR701_Sign"
+    },
+    {
+      "object": "DR701_Door",
+      "min": [
+        5.1550007,
+        2.2424998,
+        0.3204958
+      ],
+      "max": [
+        5.875,
+        2.9625001,
+        0.3804958
+      ],
+      "exportName": "DR701_Door"
+    },
+    {
+      "object": "DR701_Window",
+      "min": [
+        5.2350006,
+        2.3225,
+        0.3779957
+      ],
+      "max": [
+        5.7950001,
+        2.8824999,
+        0.4029958
+      ],
+      "exportName": "DR701_Window"
+    },
+    {
+      "object": "DR701_Handle",
+      "min": [
+        5.8196001,
+        2.4224999,
+        0.3904957
+      ],
+      "max": [
+        5.8496008,
+        2.7225001,
+        0.4504957
+      ],
+      "exportName": "DR701_Handle"
+    },
+    {
+      "object": "FD701_Cabinet",
+      "min": [
+        6.1299992,
+        1.8474998,
+        -0.4545043
+      ],
+      "max": [
+        7.0799999,
+        3.4974999,
+        0.3154957
+      ],
+      "exportName": "FD701_Cabinet"
+    },
+    {
+      "object": "FD701_Control",
+      "min": [
+        6.4549999,
+        3.2425001,
+        0.3179958
+      ],
+      "max": [
+        6.7549992,
+        3.3824999,
+        0.3429957
+      ],
+      "exportName": "FD701_Control"
+    },
+    {
+      "object": "FD701_Sign",
+      "min": [
+        6.3449993,
+        3.6175001,
+        0.5179957
+      ],
+      "max": [
+        6.8649998,
+        3.7875001,
+        0.5429957
+      ],
+      "exportName": "FD701_Sign"
+    },
+    {
+      "object": "FD701_Door",
+      "min": [
+        6.2297497,
+        2.0074999,
+        0.3179957
+      ],
+      "max": [
+        6.9802494,
+        3.0975001,
+        0.3629957
+      ],
+      "exportName": "FD701_Door"
+    },
+    {
+      "object": "FD701_Window",
+      "min": [
+        6.3199997,
+        2.1724999,
+        0.3604957
+      ],
+      "max": [
+        6.8899994,
+        3.0125,
+        0.3804957
+      ],
+      "exportName": "FD701_Window"
+    },
+    {
+      "object": "FD701_Rack",
+      "min": [
+        6.3247499,
+        2.2735,
+        0.3814957
+      ],
+      "max": [
+        6.8852491,
+        2.2914999,
+        0.3994958
+      ],
+      "exportName": "FD701_Rack"
+    },
+    {
+      "object": "FD701_Rack.001",
+      "min": [
+        6.3247499,
+        2.4935,
+        0.3814957
+      ],
+      "max": [
+        6.8852491,
+        2.5114999,
+        0.3994958
+      ],
+      "exportName": "FD701_Rack.001"
+    },
+    {
+      "object": "FD701_Rack.002",
+      "min": [
+        6.3247499,
+        2.7135,
+        0.3814957
+      ],
+      "max": [
+        6.8852491,
+        2.7315001,
+        0.3994958
+      ],
+      "exportName": "FD701_Rack.002"
+    },
+    {
+      "object": "FD701_Rack.003",
+      "min": [
+        6.3247499,
+        2.9335001,
+        0.3814957
+      ],
+      "max": [
+        6.8852491,
+        2.9515002,
+        0.3994958
+      ],
+      "exportName": "FD701_Rack.003"
+    },
+    {
+      "object": "FD701_Handle",
+      "min": [
+        6.9130001,
+        2.4224999,
+        0.3904957
+      ],
+      "max": [
+        6.9430008,
+        2.7225001,
+        0.4504957
+      ],
+      "exportName": "FD701_Handle"
+    },
+    {
+      "object": "PK801_Machine",
+      "min": [
+        4.0150003,
+        0.5975,
+        -0.3345042
+      ],
+      "max": [
+        5.2349997,
+        1.5474999,
+        0.4354957
+      ],
+      "exportName": "PK801_Machine"
+    },
+    {
+      "object": "PK801_Window",
+      "min": [
+        4.1499996,
+        0.8774999,
+        0.4379958
+      ],
+      "max": [
+        5.1000004,
+        1.4675,
+        0.4629957
+      ],
+      "exportName": "PK801_Window"
+    },
+    {
+      "object": "PK801_Sign",
+      "min": [
+        4.3649998,
+        1.6274998,
+        0.5179957
+      ],
+      "max": [
+        4.8850002,
+        1.7974999,
+        0.5429957
+      ],
+      "exportName": "PK801_Sign"
+    },
+    {
+      "object": "PK801_Conveyor",
+      "min": [
+        3.8450003,
+        0.9825,
+        0.3504957
+      ],
+      "max": [
+        5.4049997,
+        1.0825,
+        0.7904958
+      ],
+      "exportName": "PK801_Conveyor"
+    },
+    {
+      "object": "PK801_Belt",
+      "min": [
+        3.8850002,
+        1.0799999,
+        0.3804957
+      ],
+      "max": [
+        5.3649998,
+        1.105,
+        0.7804957
+      ],
+      "exportName": "PK801_Belt"
+    },
+    {
+      "object": "PK801_Package",
+      "min": [
+        4.4799995,
+        1.1025,
+        0.4604957
+      ],
+      "max": [
+        4.7700005,
+        1.3625,
+        0.7004957
+      ],
+      "exportName": "PK801_Package"
+    },
+    {
+      "object": "T801_Machine",
+      "min": [
+        5.7449999,
+        0.5975,
+        -0.3345042
+      ],
+      "max": [
+        6.9649992,
+        1.5474999,
+        0.4354957
+      ],
+      "exportName": "T801_Machine"
+    },
+    {
+      "object": "T801_Window",
+      "min": [
+        5.8799992,
+        0.8774999,
+        0.4379958
+      ],
+      "max": [
+        6.8299999,
+        1.4675,
+        0.4629957
+      ],
+      "exportName": "T801_Window"
+    },
+    {
+      "object": "T801_Sign",
+      "min": [
+        6.0949993,
+        1.6274998,
+        0.5179957
+      ],
+      "max": [
+        6.6149998,
+        1.7974999,
+        0.5429957
+      ],
+      "exportName": "T801_Sign"
+    },
+    {
+      "object": "T501_Wash_Manifold",
+      "min": [
+        2.7650003,
+        2.9675,
+        0.3354957
+      ],
+      "max": [
+        3.1850004,
+        3.0375001,
+        0.4054957
+      ],
+      "exportName": "T501_Wash_Manifold"
+    },
+    {
+      "object": "T501_Spray_Bar",
+      "min": [
+        2.7000008,
+        2.8975,
+        0.0154957
+      ],
+      "max": [
+        3.25,
+        2.9675002,
+        0.0854958
+      ],
+      "exportName": "T501_Spray_Bar"
+    },
+    {
+      "object": "H701_Tray_0",
+      "min": [
+        4.21,
+        1.6849999,
+        -0.0395043
+      ],
+      "max": [
+        4.7599993,
+        1.72,
+        0.3804957
+      ],
+      "exportName": "H701_Tray_0"
+    },
+    {
+      "object": "H701_Tray_1",
+      "min": [
+        4.21,
+        2.105,
+        -0.0395043
+      ],
+      "max": [
+        4.7599993,
+        2.1400001,
+        0.3804957
+      ],
+      "exportName": "H701_Tray_1"
+    },
+    {
+      "object": "H701_Tray_2",
+      "min": [
+        4.21,
+        2.5249999,
+        -0.0395043
+      ],
+      "max": [
+        4.7599993,
+        2.5599999,
+        0.3804957
+      ],
+      "exportName": "H701_Tray_2"
+    },
+    {
+      "object": "H701_Process_Service",
+      "min": [
+        4.3599997,
+        2.4775,
+        -0.2795043
+      ],
+      "max": [
+        4.6099997,
+        3.1275001,
+        -0.1795043
+      ],
+      "exportName": "H701_Process_Service"
+    },
+    {
+      "object": "DR701_Tray_0",
+      "min": [
+        5.2400007,
+        1.6849999,
+        -0.0395043
+      ],
+      "max": [
+        5.79,
+        1.72,
+        0.3804957
+      ],
+      "exportName": "DR701_Tray_0"
+    },
+    {
+      "object": "DR701_Tray_1",
+      "min": [
+        5.2400007,
+        2.105,
+        -0.0395043
+      ],
+      "max": [
+        5.79,
+        2.1400001,
+        0.3804957
+      ],
+      "exportName": "DR701_Tray_1"
+    },
+    {
+      "object": "DR701_Tray_2",
+      "min": [
+        5.2400007,
+        2.5249999,
+        -0.0395043
+      ],
+      "max": [
+        5.79,
+        2.5599999,
+        0.3804957
+      ],
+      "exportName": "DR701_Tray_2"
+    },
+    {
+      "object": "DR701_Process_Service",
+      "min": [
+        5.3900003,
+        2.4775,
+        -0.2795043
+      ],
+      "max": [
+        5.6400003,
+        3.1275001,
+        -0.1795043
+      ],
+      "exportName": "DR701_Process_Service"
+    },
+    {
+      "object": "FD701_Tray_0",
+      "min": [
+        6.3299999,
+        1.6849999,
+        -0.0395043
+      ],
+      "max": [
+        6.8799992,
+        1.72,
+        0.3804957
+      ],
+      "exportName": "FD701_Tray_0"
+    },
+    {
+      "object": "FD701_Tray_1",
+      "min": [
+        6.3299999,
+        2.105,
+        -0.0395043
+      ],
+      "max": [
+        6.8799992,
+        2.1400001,
+        0.3804957
+      ],
+      "exportName": "FD701_Tray_1"
+    },
+    {
+      "object": "FD701_Tray_2",
+      "min": [
+        6.3299999,
+        2.5249999,
+        -0.0395043
+      ],
+      "max": [
+        6.8799992,
+        2.5599999,
+        0.3804957
+      ],
+      "exportName": "FD701_Tray_2"
+    },
+    {
+      "object": "FD701_Process_Service",
+      "min": [
+        6.4799995,
+        2.4775,
+        -0.2795043
+      ],
+      "max": [
+        6.7299995,
+        3.1275001,
+        -0.1795043
+      ],
+      "exportName": "FD701_Process_Service"
+    },
+    {
+      "object": "PK801_Sealing_Bar",
+      "min": [
+        4.3500004,
+        1.1924999,
+        0.5204958
+      ],
+      "max": [
+        4.8999996,
+        1.2725,
+        0.5804957
+      ],
+      "exportName": "PK801_Sealing_Bar"
+    },
+    {
+      "object": "PK801_Tool_Set",
+      "min": [
+        4.5150003,
+        1.3025,
+        0.3904957
+      ],
+      "max": [
+        4.7349997,
+        1.3625,
+        0.5504957
+      ],
+      "exportName": "PK801_Tool_Set"
+    },
+    {
+      "object": "PK801_Seal_Check",
+      "min": [
+        4.5450001,
+        1.1224999,
+        -0.1695043
+      ],
+      "max": [
+        4.7049999,
+        1.2824999,
+        -0.0895043
+      ],
+      "exportName": "PK801_Seal_Check"
+    },
+    {
+      "object": "T801_Lot_Shelf_0",
+      "min": [
+        6.0449991,
+        0.9549999,
+        -0.0395043
+      ],
+      "max": [
+        6.665,
+        0.9899999,
+        0.3404957
+      ],
+      "exportName": "T801_Lot_Shelf_0"
+    },
+    {
+      "object": "T801_Lot_Shelf_1",
+      "min": [
+        6.0449991,
+        1.175,
+        -0.0395043
+      ],
+      "max": [
+        6.665,
+        1.2099999,
+        0.3404957
+      ],
+      "exportName": "T801_Lot_Shelf_1"
+    },
+    {
+      "object": "T801_Lot_Shelf_2",
+      "min": [
+        6.0449991,
+        1.395,
+        -0.0395043
+      ],
+      "max": [
+        6.665,
+        1.4299999,
+        0.3404957
+      ],
+      "exportName": "T801_Lot_Shelf_2"
+    },
+    {
+      "object": "PT_T501_TransferPump",
+      "bevelDepth": 0.03500000014901161,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              2.9750004,
+              2.1224999,
+              0.4504957
+            ],
+            [
+              2.9750004,
+              2.1224999,
+              0.7204958
+            ],
+            [
+              2.9750004,
+              1.6324999,
+              0.7204958
+            ],
+            [
+              3.4449997,
+              1.6324999,
+              0.7204958
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_T501_TransferPump"
+    },
+    {
+      "object": "PT_Wet_Selector_Header",
+      "bevelDepth": 0.03500000014901161,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              3.4449997,
+              1.6324999,
+              0.7204958
+            ],
+            [
+              3.7950001,
+              1.6324999,
+              0.7204958
+            ],
+            [
+              3.7950001,
+              1.7725,
+              0.7204958
+            ],
+            [
+              6.2749996,
+              1.7725,
+              0.7204958
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_Wet_Selector_Header"
+    },
+    {
+      "object": "PT_Wet_To_H701",
+      "bevelDepth": 0.03500000014901161,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              3.915,
+              1.7725,
+              0.7204958
+            ],
+            [
+              3.915,
+              2.2024999,
+              0.7204958
+            ],
+            [
+              3.915,
+              2.2024999,
+              -0.0695043
+            ],
+            [
+              4.0799999,
+              2.2024999,
+              -0.0695043
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_Wet_To_H701"
+    },
+    {
+      "object": "PT_H701_To_Product_Header",
+      "bevelDepth": 0.04500000178813934,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              4.8900003,
+              2.0125,
+              -0.0695043
+            ],
+            [
+              4.96,
+              2.0125,
+              -0.0695043
+            ],
+            [
+              4.96,
+              2.0125,
+              0.9304957
+            ],
+            [
+              4.96,
+              1.5925,
+              0.9304957
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_H701_To_Product_Header"
+    },
+    {
+      "object": "PT_Wet_To_DR701",
+      "bevelDepth": 0.03500000014901161,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              4.9049997,
+              1.7725,
+              0.7204958
+            ],
+            [
+              4.9049997,
+              2.2024999,
+              0.7204958
+            ],
+            [
+              4.9049997,
+              2.2024999,
+              -0.0695043
+            ],
+            [
+              5.0699997,
+              2.2024999,
+              -0.0695043
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_Wet_To_DR701"
+    },
+    {
+      "object": "PT_DR701_To_Product_Header",
+      "bevelDepth": 0.04500000178813934,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              5.96,
+              2.0125,
+              -0.0695043
+            ],
+            [
+              6.0299997,
+              2.0125,
+              -0.0695043
+            ],
+            [
+              6.0299997,
+              2.0125,
+              0.9304957
+            ],
+            [
+              6.0299997,
+              1.5925,
+              0.9304957
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_DR701_To_Product_Header"
+    },
+    {
+      "object": "PT_Wet_To_FD701",
+      "bevelDepth": 0.03500000014901161,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              5.9899998,
+              1.7725,
+              0.7204958
+            ],
+            [
+              5.9899998,
+              2.2024999,
+              0.7204958
+            ],
+            [
+              5.9899998,
+              2.2024999,
+              -0.0695043
+            ],
+            [
+              6.1549997,
+              2.2024999,
+              -0.0695043
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_Wet_To_FD701"
+    },
+    {
+      "object": "PT_FD701_To_Product_Header",
+      "bevelDepth": 0.04500000178813934,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              7.0550003,
+              2.0125,
+              -0.0695043
+            ],
+            [
+              7.125,
+              2.0125,
+              -0.0695043
+            ],
+            [
+              7.125,
+              2.0125,
+              0.9304957
+            ],
+            [
+              7.125,
+              1.5925,
+              0.9304957
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_FD701_To_Product_Header"
+    },
+    {
+      "object": "PT_Processed_Selector_Header",
+      "bevelDepth": 0.04500000178813934,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              4.6049995,
+              1.5925,
+              0.9304957
+            ],
+            [
+              7.125,
+              1.5925,
+              0.9304957
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_Processed_Selector_Header"
+    },
+    {
+      "object": "PT_Hopper_To_PK801",
+      "bevelDepth": 0.03500000014901161,
+      "splines": [
+        {
+          "type": "POLY",
+          "cyclic": false,
+          "points": [
+            [
+              4.6049995,
+              1.3325,
+              0.9304957
+            ],
+            [
+              4.6049995,
+              1.2825,
+              0.9304957
+            ],
+            [
+              4.6049995,
+              1.2825,
+              0.4154958
+            ]
+          ]
+        }
+      ],
+      "exportName": "PT_Hopper_To_PK801"
+    }
+  ],
+  "routes": [
+    {
+      "object": "PT_T501_TransferPump",
+      "points": [
+        [
+          2.9750004,
+          2.1224999,
+          0.4504957
+        ],
+        [
+          2.9750004,
+          2.1224999,
+          0.7204958
+        ],
+        [
+          2.9750004,
+          1.6324999,
+          0.7204958
+        ],
+        [
+          3.4449997,
+          1.6324999,
+          0.7204958
+        ]
+      ],
+      "endpointContacts": [
+        [
+          "T501_Body",
+          "T501_Contents"
+        ],
+        []
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_Wet_Selector_Header",
+      "points": [
+        [
+          3.4449997,
+          1.6324999,
+          0.7204958
+        ],
+        [
+          3.7950001,
+          1.6324999,
+          0.7204958
+        ],
+        [
+          3.7950001,
+          1.7725,
+          0.7204958
+        ],
+        [
+          6.2749996,
+          1.7725,
+          0.7204958
+        ]
+      ],
+      "endpointContacts": [
+        [],
+        []
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_Wet_To_H701",
+      "points": [
+        [
+          3.915,
+          1.7725,
+          0.7204958
+        ],
+        [
+          3.915,
+          2.2024999,
+          0.7204958
+        ],
+        [
+          3.915,
+          2.2024999,
+          -0.0695043
+        ],
+        [
+          4.0799999,
+          2.2024999,
+          -0.0695043
+        ]
+      ],
+      "endpointContacts": [
+        [],
+        [
+          "H701_Cabinet"
+        ]
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_H701_To_Product_Header",
+      "points": [
+        [
+          4.8900003,
+          2.0125,
+          -0.0695043
+        ],
+        [
+          4.96,
+          2.0125,
+          -0.0695043
+        ],
+        [
+          4.96,
+          2.0125,
+          0.9304957
+        ],
+        [
+          4.96,
+          1.5925,
+          0.9304957
+        ]
+      ],
+      "endpointContacts": [
+        [
+          "H701_Cabinet"
+        ],
+        []
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_Wet_To_DR701",
+      "points": [
+        [
+          4.9049997,
+          1.7725,
+          0.7204958
+        ],
+        [
+          4.9049997,
+          2.2024999,
+          0.7204958
+        ],
+        [
+          4.9049997,
+          2.2024999,
+          -0.0695043
+        ],
+        [
+          5.0699997,
+          2.2024999,
+          -0.0695043
+        ]
+      ],
+      "endpointContacts": [
+        [],
+        [
+          "DR701_Cabinet"
+        ]
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_DR701_To_Product_Header",
+      "points": [
+        [
+          5.96,
+          2.0125,
+          -0.0695043
+        ],
+        [
+          6.0299997,
+          2.0125,
+          -0.0695043
+        ],
+        [
+          6.0299997,
+          2.0125,
+          0.9304957
+        ],
+        [
+          6.0299997,
+          1.5925,
+          0.9304957
+        ]
+      ],
+      "endpointContacts": [
+        [
+          "DR701_Cabinet"
+        ],
+        []
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_Wet_To_FD701",
+      "points": [
+        [
+          5.9899998,
+          1.7725,
+          0.7204958
+        ],
+        [
+          5.9899998,
+          2.2024999,
+          0.7204958
+        ],
+        [
+          5.9899998,
+          2.2024999,
+          -0.0695043
+        ],
+        [
+          6.1549997,
+          2.2024999,
+          -0.0695043
+        ]
+      ],
+      "endpointContacts": [
+        [],
+        [
+          "FD701_Cabinet"
+        ]
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_FD701_To_Product_Header",
+      "points": [
+        [
+          7.0550003,
+          2.0125,
+          -0.0695043
+        ],
+        [
+          7.125,
+          2.0125,
+          -0.0695043
+        ],
+        [
+          7.125,
+          2.0125,
+          0.9304957
+        ],
+        [
+          7.125,
+          1.5925,
+          0.9304957
+        ]
+      ],
+      "endpointContacts": [
+        [
+          "FD701_Cabinet"
+        ],
+        []
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_Processed_Selector_Header",
+      "points": [
+        [
+          4.6049995,
+          1.5925,
+          0.9304957
+        ],
+        [
+          7.125,
+          1.5925,
+          0.9304957
+        ]
+      ],
+      "endpointContacts": [
+        [],
+        []
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    },
+    {
+      "object": "PT_Hopper_To_PK801",
+      "points": [
+        [
+          4.6049995,
+          1.3325,
+          0.9304957
+        ],
+        [
+          4.6049995,
+          1.2825,
+          0.9304957
+        ],
+        [
+          4.6049995,
+          1.2825,
+          0.4154958
+        ]
+      ],
+      "endpointContacts": [
+        [],
+        [
+          "PK801_Machine"
+        ]
+      ],
+      "representation": "not-enabled",
+      "medium": "Unconfirmed product state and conveying method",
+      "reason": "Geometry is not proof of food-compatible transfer. No product particles on these pipes; batch transfer is schematic only."
+    }
+  ],
+  "enabledActualPipeRoutes": [],
+  "schematic": [
+    {
+      "stage": "processing",
+      "time": [
+        51,
+        56
+      ],
+      "example": "DR701 batch tray loading and symbolic water removal only. H701/FD701 inactive alternatives."
+    },
+    {
+      "stage": "packing",
+      "time": [
+        56,
+        60
+      ],
+      "example": "Batch transfer to PK801, fill/seal/example lot, hold at T801. Final frame remains at 60; no food release."
+    }
+  ],
+  "unresolved": [
+    "Product form, drying mode/kinetics/endpoint and thermal load",
+    "T501 outlet and tray-handling interface",
+    "Actual product transfer to packaging, film and seal validation",
+    "Storage condition, shelf life and release plan"
+  ],
+  "scope": "Read-only geometry evidence. No hydraulic, thermal, food safety or process qualification. No GLB or Blender writes."
+}
