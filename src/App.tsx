@@ -24,7 +24,7 @@ export default function App() {
   return <>
     <a className="skip-link" href="#simulator">ข้ามไปยัง Simulator</a>
     <header className="navbar" onKeyDown={event => { if (event.key === 'Escape' && menu) { setMenu(false); menuButton.current?.focus() } }}>
-      <a className="brand" href="#overview" aria-label="REGENA หน้าหลัก"><span className="brand-mark"><Recycle size={36} strokeWidth={2}/></span><span><strong>REGENA</strong><small>DMR System</small></span></a>
+      <a className="brand" href="#overview" aria-label="REGENA หน้าหลัก"><span className="brand-mark"><Recycle size={36} strokeWidth={2}/></span><span><strong>REGENA</strong><small>RGN System</small></span></a>
       <nav id="main-navigation" aria-label="เมนูหลัก" className={menu ? 'navigation open' : 'navigation'}>{links.map(([label, href]) => <a key={href} href={href} onClick={() => setMenu(false)}>{label}</a>)}</nav>
       <button type="button" className="primary nav-cta" aria-pressed={simulator.state.demoMode} onClick={enterDemo}>Start Demo <ArrowRight size={19}/></button>
       <button ref={menuButton} className="menu-toggle" aria-controls="main-navigation" aria-label={menu ? 'ปิดเมนู' : 'เปิดเมนู'} aria-expanded={menu} onClick={() => setMenu(value => !value)}>{menu ? <X/> : <Menu/>}</button>
@@ -40,7 +40,7 @@ export default function App() {
       <ProcessSheet simulator={simulator} showDetails={false}/>
       <section id="technology" className="below-section"><div><span className="section-label">BUILT FOR EXPLORATION</span><h2>พื้นที่สำหรับเข้าใจ<br/>ทุกส่วนของกระบวนการ.</h2></div><div><p>สำรวจโมเดลเครื่อง DMR พร้อมคำอธิบายและสูตรประกอบแต่ละขั้นตอน</p><span className="subtle-badge">นำเสนออัตโนมัติ 60 วินาที · ภาพประกอบครบ 60 วินาที · แปรรูปเป็นตัวอย่าง · ไม่ใช่เวลาบำบัดจริง</span></div></section>
       <ResearchSection/>
-      <footer id="about"><a className="footer-brand" href="#overview"><Recycle size={21}/> REGENA · DMR System</a><p>Interactive 3D Process Simulator · Phase 1.1 Foundation</p><span>DESIGNED TO UNDERSTAND.</span></footer>
+      <footer id="about"><a className="footer-brand" href="#overview"><Recycle size={21}/> REGENA · RGN System</a><p>Interactive 3D Process Simulator · Phase 1.1 Foundation</p><span>DESIGNED TO UNDERSTAND.</span></footer>
     </main>
   </>
 }
